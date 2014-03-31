@@ -1,0 +1,14 @@
+{
+    "name": "syslogic/document-export-definition",
+    "type": "library",
+    "description": "Document Export Definition for Syslogic Library and conversion servers",
+    "homepage": "http://www.syslogic.nl",
+    "license": "MIT",
+    "authors": [
+        {"name": "Syslogic", "email": "info@syslogic.nl"}
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+    }
+}
