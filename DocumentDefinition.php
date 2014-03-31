@@ -1,14 +1,16 @@
 <?php
-namespace DocumentConversionDefinition;
+namespace DocumentExportDefinition;
+
+use JMS\Serializer\Annotation as Serializer;
 
 class DocumentDefinition
 {
+	/**
+	 * @Serializer\SerializedName("sections")
+	 * @Serializer\Type("array<DocumentExportDefinition\SectionDefinition>")
+	 * @var array
+	 */
 	protected $_sections = array();
-	
-	public function __construct()
-	{
-		//
-	}
 	
 	public function addSection(SectionDefinition $section)
 	{
