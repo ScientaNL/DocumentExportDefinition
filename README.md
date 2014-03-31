@@ -1,4 +1,4 @@
-DocumentConversionDefinition
+DocumentExportDefinition
 ============================
 
-Definition for Document Conversion used by both conversion clients and servers as transport contract
+Definition for Document Exporting used by both export clients and servers as transport contract
