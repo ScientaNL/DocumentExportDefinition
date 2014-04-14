@@ -16,4 +16,12 @@ class DocumentDefinition
 	{
 		$this->_sections[] = $section;
 	}
+	
+	/**
+	 * @return SectionDefinition[]
+	 */
+	public function getSections()
+	{
+		return $this->_sections;
+	}	
 }
