@@ -40,4 +40,19 @@ class SectionDefinition
 	{
 		$this->_images[$image->getImageId()] = $image;
 	}
+	
+	public function getTitle()
+	{
+		return $this->_title;
+	}
+	
+	public function getContents()
+	{
+		return $this->_contents;
+	}
+	
+	public function getImages()
+	{
+		return $this->_images;
+	}
 }

@@ -38,6 +38,11 @@ class ImageDefinition
 	{
 		return $this->_imageId;
 	}
+
+	public function getContents()
+	{
+		return $this->_contents;
+	}
 	
 	public function setEncodedContents($contents)
 	{
