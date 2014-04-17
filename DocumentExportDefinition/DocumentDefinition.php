@@ -14,10 +14,16 @@ class DocumentDefinition
 
 	const OPTION_ADD_BREAKS_BETWEEN_SECTIONS = "addBreaksBetweenSections";
 	const OPTION_ADD_TITLES = "addTitles";
+	const OPTION_HEADER_TEXT = "headerText";
+	const OPTION_FOOTER_TEXT = "footerText";
+	const OPTION_ADD_PAGE_NUMBERING = "addPageNumbering";
 
 	protected $_options = [
 			self::OPTION_ADD_TITLES => true,
-			self::OPTION_ADD_BREAKS_BETWEEN_SECTIONS => true
+			self::OPTION_ADD_BREAKS_BETWEEN_SECTIONS => true,
+			self::OPTION_HEADER_TEXT => null,
+			self::OPTION_FOOTER_TEXT => null,
+			self::OPTION_ADD_PAGE_NUMBERING => true
 		];
 
 	public function addSection(SectionDefinition $section)
