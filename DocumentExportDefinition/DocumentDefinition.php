@@ -21,6 +21,7 @@ class DocumentDefinition
 
 	const PROPERTY_TITLE = "title";
 	const PROPERTY_CREATOR = "creator";
+	const PROPERTY_LOCALE = "locale";
 
 	/**
 	 * @Serializer\SerializedName("options")
@@ -42,7 +43,8 @@ class DocumentDefinition
 	 */
 	protected $_documentProperties = [
 			self::PROPERTY_TITLE => null,
-			self::PROPERTY_CREATOR => null
+			self::PROPERTY_CREATOR => null,
+			self::PROPERTY_LOCALE => null
 		];
 
 	public function addSection(SectionDefinition $section)
