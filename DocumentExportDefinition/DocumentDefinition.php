@@ -13,7 +13,15 @@ class DocumentDefinition
 	 */
 	protected $_sections = array();
 
+	/**
+	 * @Serializer\SerializedName("toc")
+	 * @Serializer\Type("DocumentExportDefinition\TOCDefinition")
+	 * @var TOCDefinition
+	 */
+	protected $toc = null;
+
 	const OPTION_ADD_BREAKS_BETWEEN_SECTIONS = "addBreaksBetweenSections";
+	const OPTION_ADD_TOC = "addTOC";
 	const OPTION_ADD_TITLES = "addTitles";
 	const OPTION_HEADER_TEXT = "headerText";
 	const OPTION_FOOTER_TEXT = "footerText";
@@ -21,6 +29,8 @@ class DocumentDefinition
 
 	const PROPERTY_TITLE = "title";
 	const PROPERTY_CREATOR = "creator";
+	const PROPERTY_TOC = "toc";
+	const PROPERTY_COMPANY = "company";
 	const PROPERTY_LOCALE = "locale";
 
 	/**
@@ -29,23 +39,39 @@ class DocumentDefinition
 	 * @var array
 	 */
 	protected $_options = [
-			self::OPTION_ADD_TITLES => true,
-			self::OPTION_ADD_BREAKS_BETWEEN_SECTIONS => true,
-			self::OPTION_HEADER_TEXT => null,
-			self::OPTION_FOOTER_TEXT => null,
-			self::OPTION_ADD_PAGE_NUMBERING => true
-		];
+		self::OPTION_ADD_TITLES => true,
+		self::OPTION_ADD_BREAKS_BETWEEN_SECTIONS => true,
+		self::OPTION_HEADER_TEXT => null,
+		self::OPTION_FOOTER_TEXT => null,
+		self::OPTION_ADD_PAGE_NUMBERING => true,
+		self::OPTION_ADD_TOC => true
+	];
 
 	/**
 	 * @Serializer\SerializedName("documentProperties")
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
+
 	protected $_documentProperties = [
-			self::PROPERTY_TITLE => null,
-			self::PROPERTY_CREATOR => null,
-			self::PROPERTY_LOCALE => null
-		];
+		self::PROPERTY_TITLE => null,
+		self::PROPERTY_CREATOR => null,
+		self::PROPERTY_COMPANY => null,
+		self::PROPERTY_LOCALE => null
+	];
+
+	public function setTOC(TOCDefinition $toc)
+	{
+		$this->toc = $toc;
+	}
+
+	/**
+	 * @return TOCDefinition
+	 */
+	public function getTOC()
+	{
+		return $this->toc;
+	}
 
 	public function addSection(SectionDefinition $section)
 	{
