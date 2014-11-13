@@ -25,7 +25,27 @@ class SectionDefinition
 	 * @var array
 	 */	
 	protected $_images = [];
-	
+
+
+	/**
+	 * @Serializer\SerializedName("anchor")
+	 * @Serializer\Type("string")
+	 * @var string
+	 */
+	protected $anchor = [];
+
+
+	public function setAnchor($anchor)
+	{
+		$this->anchor = $anchor;
+	}
+
+	public function getAnchor()
+	{
+		return $this->anchor;
+	}
+
+
 	public function setTitle($title)
 	{
 		$this->_title = $title;
