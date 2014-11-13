@@ -52,7 +52,6 @@ class DocumentDefinition
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
-
 	protected $_documentProperties = [
 		self::PROPERTY_TITLE => null,
 		self::PROPERTY_CREATOR => null,

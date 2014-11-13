@@ -32,8 +32,7 @@ class SectionDefinition
 	 * @Serializer\Type("string")
 	 * @var string
 	 */
-	protected $anchor = [];
-
+	protected $anchor;
 
 	public function setAnchor($anchor)
 	{
