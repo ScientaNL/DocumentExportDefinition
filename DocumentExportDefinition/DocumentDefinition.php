@@ -44,7 +44,7 @@ class DocumentDefinition
 		self::OPTION_HEADER_TEXT => null,
 		self::OPTION_FOOTER_TEXT => null,
 		self::OPTION_ADD_PAGE_NUMBERING => true,
-		self::OPTION_ADD_TOC => true
+		self::OPTION_ADD_TOC => false
 	];
 
 	/**
