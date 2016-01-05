@@ -1,6 +1,7 @@
 <?php
 namespace DocumentExportDefinition;
 
+use DocumentExportDefinition\Section\AbstractSectionDefinition;
 use JMS\Serializer\Annotation as Serializer;
 use DocumentExportDefinition\Exception\InvalidArgumentException;
 
@@ -9,7 +10,7 @@ class DocumentDefinition
 	/**
 	 * @Serializer\SerializedName("sections")
 	 * @Serializer\Type("array<DocumentExportDefinition\AbstractSectionDefinition>")
-	 * @var SectionDefinition[]
+	 * @var AbstractSectionDefinition[]
 	 */
 	protected $sections = [];
 
@@ -63,17 +64,17 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param SectionDefinition $section
+	 * @param AbstractSectionDefinition $section
 	 */
-	public function prependSection(SectionDefinition $section)
+	public function prependSection(AbstractSectionDefinition $section)
 	{
 		array_unshift($this->sections, $section);
 	}
 
 	/**
-	 * @param SectionDefinition $section
+	 * @param AbstractSectionDefinition $section
 	 */
-	public function addSection(SectionDefinition $section)
+	public function addSection(AbstractSectionDefinition $section)
 	{
 		$this->sections[] = $section;
 	}
