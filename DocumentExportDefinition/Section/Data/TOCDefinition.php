@@ -1,7 +1,7 @@
 <?php
 namespace DocumentExportDefinition\Section\Data;
 
-use DocumentExportDefinition\AbstractSectionDefinition;
+use DocumentExportDefinition\Section\AbstractSectionDefinition;
 
 class TOCDefinition extends AbstractSectionDefinition
 {

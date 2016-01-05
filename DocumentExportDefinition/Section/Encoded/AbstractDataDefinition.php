@@ -1,8 +1,7 @@
 <?php
 namespace DocumentExportDefinition\Section\Encoded;
 
-use DocumentExportDefinition\AbstractSectionDefinition;
-use JMS\Serializer\Annotation as Serializer;
+use DocumentExportDefinition\Section\AbstractSectionDefinition;
 
 abstract class AbstractDataDefinition extends AbstractSectionDefinition
 {
