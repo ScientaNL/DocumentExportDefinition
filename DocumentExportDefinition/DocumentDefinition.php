@@ -8,28 +8,19 @@ class DocumentDefinition
 {
 	/**
 	 * @Serializer\SerializedName("sections")
-	 * @Serializer\Type("array<DocumentExportDefinition\SectionDefinition>")
+	 * @Serializer\Type("array<DocumentExportDefinition\AbstractSectionDefinition>")
 	 * @var SectionDefinition[]
 	 */
-	protected $_sections = array();
-
-	/**
-	 * @Serializer\SerializedName("toc")
-	 * @Serializer\Type("DocumentExportDefinition\TOCDefinition")
-	 * @var TOCDefinition
-	 */
-	protected $toc = null;
+	protected $sections = [];
 
 	const OPTION_ADD_BREAKS_BETWEEN_SECTIONS = "addBreaksBetweenSections";
-	const OPTION_ADD_TOC = "addTOC";
 	const OPTION_ADD_TITLES = "addTitles";
+	const OPTION_DOWNLOAD_IMAGES = "downloadImages";
 	const OPTION_HEADER_TEXT = "headerText";
 	const OPTION_FOOTER_TEXT = "footerText";
-	const OPTION_ADD_PAGE_NUMBERING = "addPageNumbering";
 
 	const PROPERTY_TITLE = "title";
 	const PROPERTY_CREATOR = "creator";
-	const PROPERTY_TOC = "toc";
 	const PROPERTY_COMPANY = "company";
 	const PROPERTY_LOCALE = "locale";
 
@@ -38,13 +29,12 @@ class DocumentDefinition
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
-	protected $_options = [
+	protected $options = [
 		self::OPTION_ADD_TITLES => true,
 		self::OPTION_ADD_BREAKS_BETWEEN_SECTIONS => true,
+		self::OPTION_DOWNLOAD_IMAGES => true,
 		self::OPTION_HEADER_TEXT => null,
-		self::OPTION_FOOTER_TEXT => null,
-		self::OPTION_ADD_PAGE_NUMBERING => true,
-		self::OPTION_ADD_TOC => false
+		self::OPTION_FOOTER_TEXT => null
 	];
 
 	/**
@@ -52,7 +42,7 @@ class DocumentDefinition
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
-	protected $_documentProperties = [
+	protected $documentProperties = [
 		self::PROPERTY_TITLE => null,
 		self::PROPERTY_CREATOR => null,
 		self::PROPERTY_COMPANY => null,
@@ -72,56 +62,84 @@ class DocumentDefinition
 		return $this->toc;
 	}
 
-	public function addSection(SectionDefinition $section)
+	/**
+	 * @param SectionDefinition $section
+	 */
+	public function prependSection(SectionDefinition $section)
 	{
-		$this->_sections[] = $section;
+		array_unshift($this->sections, $section);
 	}
 
 	/**
-	 * @return SectionDefinition[]
+	 * @param SectionDefinition $section
+	 */
+	public function addSection(SectionDefinition $section)
+	{
+		$this->sections[] = $section;
+	}
+
+	/**
+	 * @param $sectionType
+	 * @return bool
+	 */
+	public function hasSection($sectionType)
+	{
+		foreach ($this->sections as $section)
+		{
+			if ($section instanceof $sectionType)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * @return AbstractSectionDefinition[]
 	 */
 	public function getSections()
 	{
-		return $this->_sections;
+		return $this->sections;
 	}
 
 	public function setOption($option, $value)
 	{
-		if(array_key_exists($option, $this->_options) === false)
+		if(array_key_exists($option, $this->options) === false)
 		{
 			throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
 		}
 
-		$this->_options[$option] = $value;
+		$this->options[$option] = $value;
 	}
 
 	public function getOption($option)
 	{
-		if(array_key_exists($option, $this->_options) === false)
+		if(array_key_exists($option, $this->options) === false)
 		{
 			throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
 		}
 
-		return $this->_options[$option];
+		return $this->options[$option];
 	}
 
 	public function setDocumentProperty($property, $value)
 	{
-		if(array_key_exists($property, $this->_documentProperties) === false)
+		if(array_key_exists($property, $this->documentProperties) === false)
 		{
 			throw new InvalidArgumentException(sprintf("Invalid property %s specified", $property));
 		}
 
-		$this->_documentProperties[$property] = $value;
+		$this->documentProperties[$property] = $value;
 	}
 
 	public function getDocumentProperty($property)
 	{
-		if(array_key_exists($property, $this->_documentProperties) === false)
+		if(array_key_exists($property, $this->documentProperties) === false)
 		{
 			throw new InvalidArgumentException(sprintf("Invalid option %s specified", $property));
 		}
 
-		return $this->_documentProperties[$property];
+		return $this->documentProperties[$property];
 	}
 }
