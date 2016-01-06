@@ -5,7 +5,11 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "objectType", map = {
+ *    "FileDefinition": "DocumentExportDefinition\Section\Data\FileDefinition",
  *    "TOCDefinition": "DocumentExportDefinition\Section\Data\TOCDefinition",
+ *    "DocxDefinition": "DocumentExportDefinition\Section\Encoded\DocxDefinition",
+ *    "FlowchartDefinition": "DocumentExportDefinition\Section\Encoded\FlowchartDefinition",
+ *    "ImageDefinition": "DocumentExportDefinition\Section\Encoded\ImageDefinition",
  *    "HtmlDefinition": "DocumentExportDefinition\Section\Html\HtmlDefinition",
  *    "HtmlImageDefinition": "DocumentExportDefinition\Section\Html\HtmlImageDefinition"
  * })
