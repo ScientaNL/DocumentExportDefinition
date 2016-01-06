@@ -2,6 +2,7 @@
 namespace DocumentExportDefinition\Section\Html;
 
 use DocumentExportDefinition\Section\AbstractSectionDefinition;
+use JMS\Serializer\Annotation as Serializer;
 
 class HtmlDefinition extends AbstractSectionDefinition
 {
