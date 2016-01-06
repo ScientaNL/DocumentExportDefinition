@@ -9,7 +9,7 @@ class DocumentDefinition
 {
 	/**
 	 * @Serializer\SerializedName("sections")
-	 * @Serializer\Type("array<DocumentExportDefinition\AbstractSectionDefinition>")
+	 * @Serializer\Type("array<DocumentExportDefinition\Section\AbstractSectionDefinition>")
 	 * @var AbstractSectionDefinition[]
 	 */
 	protected $sections = [];

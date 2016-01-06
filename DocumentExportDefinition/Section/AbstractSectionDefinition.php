@@ -5,9 +5,9 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "type", map = {
- *    "DocumentExportDefinition\Section\Data\TOCDefinition": "DocumentExportDefinition\Section\Data\TOCDefinition",
- *    "DocumentExportDefinition\Section\Html\HtmlDefinition": "DocumentExportDefinition\Section\Html\HtmlDefinition",
- *    "DocumentExportDefinition\Section\Html\HtmlImageDefinition": "DocumentExportDefinition\Section\Html\HtmlImageDefinition"
+ *    "TOCDefinition": "DocumentExportDefinition\Section\Data\TOCDefinition",
+ *    "HtmlDefinition": "DocumentExportDefinition\Section\Html\HtmlDefinition",
+ *    "HtmlImageDefinition": "DocumentExportDefinition\Section\Html\HtmlImageDefinition"
  * })
  */
 abstract class AbstractSectionDefinition
@@ -42,16 +42,6 @@ abstract class AbstractSectionDefinition
 	{
 		$this->title = $title;
 		$this->contents = $contents;
-	}
-
-	/**
-	 * @Serializer\VirtualProperty
-	 * @Serializer\SerializedName("type")
-	 * @return string
-	 */
-	public function getType()
-	{
-		return static::class;
 	}
 
 	/**

@@ -14,6 +14,16 @@ class HtmlDefinition extends AbstractSectionDefinition
 	protected $images = [];
 
 	/**
+	 * @Serializer\VirtualProperty
+	 * @Serializer\SerializedName("type")
+	 * @return string
+	 */
+	public function getType()
+	{
+		return 'HtmlDefinition';
+	}
+
+	/**
 	 * @param HtmlImageDefinition $image
 	 */
 	public function addImage(HtmlImageDefinition $image)
