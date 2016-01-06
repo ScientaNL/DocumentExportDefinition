@@ -13,11 +13,6 @@ class FileDefinition extends AbstractSectionDefinition
 	 */
 	protected $contents;
 
-	/**
-	 * @Serializer\VirtualProperty
-	 * @Serializer\SerializedName("type")
-	 * @return string
-	 */
 	public function getType()
 	{
 		return 'FileDefinition';

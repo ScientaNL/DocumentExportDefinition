@@ -11,11 +11,6 @@ class ImageDefinition extends AbstractDataDefinition
 	 */
 	protected $imageId;
 
-	/**
-	 * @Serializer\VirtualProperty
-	 * @Serializer\SerializedName("type")
-	 * @return string
-	 */
 	public function getType()
 	{
 		return 'ImageDefinition';

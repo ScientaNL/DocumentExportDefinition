@@ -2,7 +2,6 @@
 namespace DocumentExportDefinition\Section\Html;
 
 use DocumentExportDefinition\Section\AbstractSectionDefinition;
-use JMS\Serializer\Annotation as Serializer;
 
 class HtmlDefinition extends AbstractSectionDefinition
 {
@@ -13,11 +12,6 @@ class HtmlDefinition extends AbstractSectionDefinition
 	 */
 	protected $images = [];
 
-	/**
-	 * @Serializer\VirtualProperty
-	 * @Serializer\SerializedName("type")
-	 * @return string
-	 */
 	public function getType()
 	{
 		return 'HtmlDefinition';
