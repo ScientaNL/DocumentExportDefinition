@@ -1,6 +1,8 @@
 <?php
 namespace DocumentExportDefinition\Section\Encoded;
 
+use JMS\Serializer\Annotation as Serializer;
+
 class FlowchartDefinition extends AbstractEncodedDataDefinition
 {
 	/**
@@ -10,13 +12,19 @@ class FlowchartDefinition extends AbstractEncodedDataDefinition
 	protected $mimeType;
 
 	/**
+	 * @Serializer\SerializedName("extension")
+	 * @Serializer\Type("string")
+	 */
+	protected $extension;
+
+	/**
 	 * @Serializer\SerializedName("width")
-	 * @Serializer\Type("int")
+	 * @Serializer\Type("integer")
 	 */
 	protected $width;
 	/**
 	 * @Serializer\SerializedName("height")
-	 * @Serializer\Type("int")
+	 * @Serializer\Type("integer")
 	 */
 	protected $height;
 
@@ -39,6 +47,22 @@ class FlowchartDefinition extends AbstractEncodedDataDefinition
 	public function getMimeType()
 	{
 		return $this->mimeType;
+	}
+
+	/**
+	 * @param string $extension
+	 */
+	public function setExtension($extension)
+	{
+		$this->extension = $extension;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getExtension()
+	{
+		return $this->extension;
 	}
 
 	/**
