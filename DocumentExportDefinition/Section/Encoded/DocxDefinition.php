@@ -1,7 +1,7 @@
 <?php
 namespace DocumentExportDefinition\Section\Encoded;
 
-class DocxDefinition extends AbstractDataDefinition
+class DocxDefinition extends AbstractEncodedDataDefinition
 {
 	public function getType()
 	{

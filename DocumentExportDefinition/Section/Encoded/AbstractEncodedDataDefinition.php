@@ -2,9 +2,19 @@
 namespace DocumentExportDefinition\Section\Encoded;
 
 use DocumentExportDefinition\Section\AbstractSectionDefinition;
+use JMS\Serializer\Annotation as Serializer;
 
-abstract class AbstractDataDefinition extends AbstractSectionDefinition
+abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
 {
+	/**
+	 * @Serializer\SerializedName("contents")
+	 * @Serializer\Type("string")
+	 * @Serializer\Accessor(getter="getEncodedContents",setter="setEncodedContents")
+	 *
+	 * @var string
+	 */
+	protected $contents;
+
 	/**
 	 * @param $contents
 	 */

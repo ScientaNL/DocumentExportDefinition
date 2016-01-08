@@ -3,7 +3,7 @@ namespace DocumentExportDefinition\Section\Encoded;
 
 use JMS\Serializer\Annotation as Serializer;
 
-class ImageDefinition extends AbstractDataDefinition
+class ImageDefinition extends AbstractEncodedDataDefinition
 {
 	/**
 	 * @Serializer\SerializedName("imageId")
