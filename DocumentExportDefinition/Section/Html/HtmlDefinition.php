@@ -23,7 +23,7 @@ class HtmlDefinition extends AbstractSectionDefinition
 	 */
 	public function addImage(HtmlImageDefinition $image)
 	{
-		$this->images[$image->getImageId()] = $image;
+		$this->images[$image->getFileId()] = $image;
 	}
 
 	/**
