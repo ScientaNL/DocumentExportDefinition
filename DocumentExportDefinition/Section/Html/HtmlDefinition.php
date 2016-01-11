@@ -8,7 +8,7 @@ class HtmlDefinition extends AbstractSectionDefinition
 {
 	/**
 	 * @Serializer\SerializedName("images")
-	 * @Serializer\Type("array<string,DocumentExportDefinition\HtmlImageDefinition>")
+	 * @Serializer\Type("array<string,DocumentExportDefinition\Section\Html\HtmlImageDefinition>")
 	 * @var array
 	 */
 	protected $images = [];
