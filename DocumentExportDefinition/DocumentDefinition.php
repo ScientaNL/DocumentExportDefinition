@@ -14,6 +14,13 @@ class DocumentDefinition
 	 */
 	protected $sections = [];
 
+	/**
+	 * @Serializer\Type("string")
+	 * @Serializer\SerializedName("templateDocx")
+	 * @Serializer\Accessor(getter="getEncodedTemplate",setter="setEncodedTemplate")
+	 */
+	protected $templateDocx;
+
 	const OPTION_ADD_BREAKS_BETWEEN_SECTIONS = "addBreaksBetweenSections";
 	const OPTION_ADD_TITLES = "addTitles";
 	const OPTION_DOWNLOAD_IMAGES = "downloadImages";
@@ -49,19 +56,6 @@ class DocumentDefinition
 		self::PROPERTY_COMPANY => null,
 		self::PROPERTY_LOCALE => null
 	];
-
-	public function setTOC(TOCDefinition $toc)
-	{
-		$this->toc = $toc;
-	}
-
-	/**
-	 * @return TOCDefinition
-	 */
-	public function getTOC()
-	{
-		return $this->toc;
-	}
 
 	/**
 	 * @param AbstractSectionDefinition $section
@@ -142,5 +136,31 @@ class DocumentDefinition
 		}
 
 		return $this->documentProperties[$property];
+	}
+
+	public function setTemplateDocx($templateFile)
+	{
+		$this->templateDocx = $templateFile;
+	}
+
+	public function getTemplateDocx()
+	{
+		return $this->templateDocx;
+	}
+
+	/**
+	 * @param $templateFile
+	 */
+	public function setEncodedTemplate($templateFile)
+	{
+		$this->templateDocx = base64_decode($templateFile);
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getEncodedTemplate()
+	{
+		return base64_encode($this->templateDocx);
 	}
 }
