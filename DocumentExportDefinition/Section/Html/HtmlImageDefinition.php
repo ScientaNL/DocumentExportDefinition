@@ -2,6 +2,7 @@
 namespace DocumentExportDefinition\Section\Html;
 
 use DocumentExportDefinition\Section\Encoded\ImageDefinition;
+use JMS\Serializer\Annotation as Serializer;
 
 class HtmlImageDefinition extends ImageDefinition
 {

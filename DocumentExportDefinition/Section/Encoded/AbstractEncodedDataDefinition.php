@@ -19,12 +19,6 @@ abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
 	protected $mimeType;
 
 	/**
-	 * @Serializer\SerializedName("extension")
-	 * @Serializer\Type("string")
-	 */
-	protected $extension;
-
-	/**
 	 * @Serializer\SerializedName("contents")
 	 * @Serializer\Type("string")
 	 * @Serializer\Accessor(getter="getEncodedContents",setter="setEncodedContents")
@@ -34,10 +28,13 @@ abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
 	protected $contents;
 
 	/**
-	 * ImageDefinition constructor.
+	 * AbstractSectionDefinition constructor.
+	 * @param null $title
+	 * @param null $contents
 	 */
-	public function __construct()
+	public function __construct($title = null, $contents = null)
 	{
+		parent::__construct($title, $contents);
 		$this->fileId = uniqid($this->getType());
 	}
 
@@ -71,22 +68,6 @@ abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
 	public function getMimeType()
 	{
 		return $this->mimeType;
-	}
-
-	/**
-	 * @param string $extension
-	 */
-	public function setExtension($extension)
-	{
-		$this->extension = $extension;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getExtension()
-	{
-		return $this->extension;
 	}
 
 	/**
