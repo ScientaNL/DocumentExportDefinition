@@ -13,6 +13,12 @@ class HtmlDefinition extends AbstractSectionDefinition
 	 */
 	protected $images = [];
 
+	/**
+	 * @Serializer\SerializedName("useStrictStyles")
+	 * @Serializer\Type("boolean")
+	 */
+	protected $useStrictStyles = true;
+
 	public function getType()
 	{
 		return 'HtmlDefinition';
@@ -32,5 +38,15 @@ class HtmlDefinition extends AbstractSectionDefinition
 	public function getImages()
 	{
 		return $this->images;
+	}
+
+	public function setUseStrictStyles($useStrictStyles)
+	{
+		$this->useStrictStyles = $useStrictStyles;
+	}
+
+	public function getUseStrictStyles()
+	{
+		return $this->useStrictStyles;
 	}
 }
