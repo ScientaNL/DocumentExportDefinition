@@ -19,6 +19,12 @@ abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
 	protected $mimeType;
 
 	/**
+	 * @Serializer\SerializedName("extension")
+	 * @Serializer\Type("string")
+	 */
+	protected $extension;
+
+	/**
 	 * @Serializer\SerializedName("contents")
 	 * @Serializer\Type("string")
 	 * @Serializer\Accessor(getter="getEncodedContents",setter="setEncodedContents")
@@ -60,6 +66,19 @@ abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
 	public function setMimeType($mimeType)
 	{
 		$this->mimeType = $mimeType;
+	}
+
+	/**
+	 * @param int $extension
+	 */
+	public function setExtension($extension)
+	{
+		$this->extension = $extension;
+	}
+
+	public function getExtension()
+	{
+		return $this->extension;
 	}
 
 	/**
