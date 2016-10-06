@@ -10,7 +10,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=5.5.0",
-		"jms/serializer": "1.3.1"
+		"jms/serializer": "dev-master#5ebae632eb79179c11a81f4ece77f086efdf493c"
 	},
 	"autoload": {
 		"psr-0": { "DocumentExportDefinition\\": "." }
