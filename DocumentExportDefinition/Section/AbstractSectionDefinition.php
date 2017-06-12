@@ -38,6 +38,13 @@ abstract class AbstractSectionDefinition
 	protected $anchor;
 
 	/**
+	 * @Serializer\SerializedName("anchor")
+	 * @Serializer\Type("string")
+	 * @var string
+	 */
+	protected $orientation;
+
+	/**
 	 * AbstractSectionDefinition constructor.
 	 * @param null $title
 	 * @param null $contents
@@ -103,4 +110,20 @@ abstract class AbstractSectionDefinition
 	{
 		return $this->anchor;
 	}
+
+    /**
+     * @return string
+     */
+    public function getOrientation()
+    {
+        return $this->orientation;
+    }
+
+    /**
+     * @param string $orientation
+     */
+    public function setOrientation($orientation)
+    {
+        $this->orientation = $orientation;
+    }
 }
