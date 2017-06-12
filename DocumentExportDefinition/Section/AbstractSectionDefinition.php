@@ -38,7 +38,7 @@ abstract class AbstractSectionDefinition
 	protected $anchor;
 
 	/**
-	 * @Serializer\SerializedName("anchor")
+	 * @Serializer\SerializedName("orientation")
 	 * @Serializer\Type("string")
 	 * @var string
 	 */
