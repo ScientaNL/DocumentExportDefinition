@@ -30,6 +30,7 @@ class DocumentDefinition
 	const PROPERTY_CREATOR = "creator";
 	const PROPERTY_COMPANY = "company";
 	const PROPERTY_LOCALE = "locale";
+	const PROPERTY_DATE = 'date';
 
 	/**
 	 * @Serializer\SerializedName("options")
@@ -52,7 +53,8 @@ class DocumentDefinition
 		self::PROPERTY_TITLE => null,
 		self::PROPERTY_CREATOR => null,
 		self::PROPERTY_COMPANY => null,
-		self::PROPERTY_LOCALE => null
+		self::PROPERTY_LOCALE => null,
+        self::PROPERTY_DATE => null
 	];
 
 	/**
