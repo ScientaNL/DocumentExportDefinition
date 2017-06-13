@@ -22,7 +22,7 @@ class DocumentDefinition
 	protected $templateDocx;
 
 	const OPTION_ADD_BREAKS_BETWEEN_SECTIONS = "addBreaksBetweenSections";
-	const OPTION_ADD_PAGE_NUMBERING = "addPageNumbering";
+	const OPTION_PAGE_NUMBERING = "pageNumbering";
 	const OPTION_ADD_TITLES = "addTitles";
 	const OPTION_DOWNLOAD_IMAGES = "downloadImages";
 
@@ -40,7 +40,7 @@ class DocumentDefinition
 		self::OPTION_ADD_TITLES => true,
 		self::OPTION_ADD_BREAKS_BETWEEN_SECTIONS => true,
 		self::OPTION_DOWNLOAD_IMAGES => true,
-		self::OPTION_ADD_PAGE_NUMBERING => true
+		self::OPTION_PAGE_NUMBERING => true
 	];
 
 	/**
