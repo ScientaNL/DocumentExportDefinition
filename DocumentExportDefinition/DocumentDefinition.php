@@ -57,7 +57,14 @@ class DocumentDefinition
         self::PROPERTY_DATE => null
 	];
 
-	/**
+    /**
+     * @Serializer\SerializedName("variables")
+     * @Serializer\Type("array")
+     * @var array
+     */
+    protected $variables;
+
+    /**
 	 * @param AbstractSectionDefinition $section
 	 */
 	public function prependSection(AbstractSectionDefinition $section)
@@ -97,6 +104,16 @@ class DocumentDefinition
 	{
 		return $this->sections;
 	}
+
+    public function getVariables($variable)
+    {
+        if(array_key_exists($variable, $this->variables) === false)
+        {
+            throw new InvalidArgumentException(sprintf("Invalid variable %s specified", $variable));
+        }
+
+        return $this->variables[$variable];
+    }
 
 	public function setOption($option, $value)
 	{
