@@ -22,10 +22,9 @@ class DocumentDefinition
 	protected $templateDocx;
 
 	const OPTION_ADD_BREAKS_BETWEEN_SECTIONS = "addBreaksBetweenSections";
+	const OPTION_ADD_PAGE_NUMBERING = "addPageNumbering";
 	const OPTION_ADD_TITLES = "addTitles";
 	const OPTION_DOWNLOAD_IMAGES = "downloadImages";
-	const OPTION_HEADER_TEXT = "headerText";
-	const OPTION_FOOTER_TEXT = "footerText";
 
 	const PROPERTY_TITLE = "title";
 	const PROPERTY_CREATOR = "creator";
