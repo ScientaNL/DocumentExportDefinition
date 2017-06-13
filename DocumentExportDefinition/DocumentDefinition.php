@@ -40,7 +40,7 @@ class DocumentDefinition
 		self::OPTION_ADD_TITLES => true,
 		self::OPTION_ADD_BREAKS_BETWEEN_SECTIONS => true,
 		self::OPTION_DOWNLOAD_IMAGES => true,
-		self::OPTION_ADD_PAGE_NUMBERING => null
+		self::OPTION_ADD_PAGE_NUMBERING => true
 	];
 
 	/**
