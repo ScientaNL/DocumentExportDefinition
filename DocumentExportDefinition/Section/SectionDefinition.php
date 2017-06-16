@@ -1,10 +1,11 @@
 <?php
+
 namespace DocumentExportDefinition\Section;
 
 use JMS\Serializer\Annotation as Serializer;
 
 
-public class SectionDefinition
+class SectionDefinition
 {
 	/**
 	 * @Serializer\SerializedName("title")
