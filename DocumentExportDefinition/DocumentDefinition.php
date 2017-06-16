@@ -2,7 +2,7 @@
 
 namespace DocumentExportDefinition;
 
-use DocumentExportDefinition\Section\AbstractSectionDefinition;
+use DocumentExportDefinition\Section\SectionDefinition;
 use JMS\Serializer\Annotation as Serializer;
 use DocumentExportDefinition\Exception\InvalidArgumentException;
 
@@ -22,21 +22,21 @@ class DocumentDefinition
     /**
      * @Serializer\SerializedName("header")
      * @Serializer\Type("DocumentExportDefinition\Section\AbstractSectionDefinition")
-     * @var AbstractSectionDefinition[]
+     * @var SectionDefinition[]
      */
     protected $header = [];
 
     /**
      * @Serializer\SerializedName("footer")
      * @Serializer\Type("DocumentExportDefinition\Section\AbstractSectionDefinition")
-     * @var AbstractSectionDefinition[]
+     * @var SectionDefinition[]
      */
     protected $footer = [];
 
     /**
      * @Serializer\SerializedName("sections")
      * @Serializer\Type("array<DocumentExportDefinition\Section\AbstractSectionDefinition>")
-     * @var AbstractSectionDefinition[]
+     * @var SectionDefinition[]
      */
     protected $sections = [];
 
@@ -73,17 +73,17 @@ class DocumentDefinition
     ];
 
     /**
-     * @param AbstractSectionDefinition $section
+     * @param SectionDefinition $section
      */
-    public function prependSection(AbstractSectionDefinition $section)
+    public function prependSection(SectionDefinition $section)
     {
         array_unshift($this->sections, $section);
     }
 
     /**
-     * @param AbstractSectionDefinition $section
+     * @param SectionDefinition $section
      */
-    public function addSection(AbstractSectionDefinition $section)
+    public function addSection(SectionDefinition $section)
     {
         $this->sections[] = $section;
     }
@@ -104,7 +104,7 @@ class DocumentDefinition
     }
 
     /**
-     * @return AbstractSectionDefinition[]
+     * @return SectionDefinition[]
      */
     public function getSections()
     {

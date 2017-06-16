@@ -3,19 +3,8 @@ namespace DocumentExportDefinition\Section;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\Discriminator(field = "objectType", map = {
- *    "StringDefinition" :  "DocumentExportDefinition\Section\Data\StringDefinition",
- *    "FileDefinition": "DocumentExportDefinition\Section\Data\FileDefinition",
- *    "TOCDefinition": "DocumentExportDefinition\Section\Data\TOCDefinition",
- *    "DocxDefinition": "DocumentExportDefinition\Section\Encoded\DocxDefinition",
- *    "FlowchartDefinition": "DocumentExportDefinition\Section\Encoded\FlowchartDefinition",
- *    "ImageDefinition": "DocumentExportDefinition\Section\Encoded\ImageDefinition",
- *    "HtmlDefinition": "DocumentExportDefinition\Section\Html\HtmlDefinition",
- *    "HtmlImageDefinition": "DocumentExportDefinition\Section\Html\HtmlImageDefinition"
- * })
- */
-abstract class AbstractSectionDefinition
+
+public class SectionDefinition
 {
 	/**
 	 * @Serializer\SerializedName("title")
@@ -56,14 +45,6 @@ abstract class AbstractSectionDefinition
 		$this->title = $title;
 		$this->contents = $contents;
 	}
-
-	/**
-	 * @Serializer\VirtualProperty
-	 * @Serializer\SerializedName("objectType")
-	 * @Serializer\Type("string")
-	 * @return string
-	 */
-	abstract public function getType();
 
 	/**
 	 * @param string $title
