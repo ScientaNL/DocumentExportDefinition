@@ -21,21 +21,21 @@ class DocumentDefinition
 
     /**
      * @Serializer\SerializedName("header")
-     * @Serializer\Type("DocumentExportDefinition\Section\AbstractSectionDefinition")
+     * @Serializer\Type("DocumentExportDefinition\Section\SectionDefinition")
      * @var SectionDefinition[]
      */
     protected $header = [];
 
     /**
      * @Serializer\SerializedName("footer")
-     * @Serializer\Type("DocumentExportDefinition\Section\AbstractSectionDefinition")
+     * @Serializer\Type("DocumentExportDefinition\Section\SectionDefinition")
      * @var SectionDefinition[]
      */
     protected $footer = [];
 
     /**
      * @Serializer\SerializedName("sections")
-     * @Serializer\Type("array<DocumentExportDefinition\Section\AbstractSectionDefinition>")
+     * @Serializer\Type("array<DocumentExportDefinition\Section\SectionDefinition>")
      * @var SectionDefinition[]
      */
     protected $sections = [];
