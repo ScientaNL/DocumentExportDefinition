@@ -5,6 +5,7 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "objectType", map = {
+ *    "StringDefinition" :  "DocumentExportDefinition\Section\Data\StringDefinition",
  *    "FileDefinition": "DocumentExportDefinition\Section\Data\FileDefinition",
  *    "TOCDefinition": "DocumentExportDefinition\Section\Data\TOCDefinition",
  *    "DocxDefinition": "DocumentExportDefinition\Section\Encoded\DocxDefinition",
@@ -18,31 +19,32 @@ abstract class AbstractSectionDefinition
 {
 	/**
 	 * @Serializer\SerializedName("title")
-	 * @Serializer\Type("string")
+	 * @Serializer\Type("array")
 	 * @var string
 	 */
 	protected $title;
 
 	/**
 	 * @Serializer\SerializedName("contents")
-	 * @Serializer\Type("string")
+	 * @Serializer\Type("array")
 	 * @var string
 	 */
 	protected $contents;
 
 	/**
-	 * @Serializer\SerializedName("anchor")
-	 * @Serializer\Type("string")
+	 * @Serializer\SerializedName("variables")
+	 * @Serializer\Type("array")
 	 * @var string
 	 */
-	protected $anchor;
+	protected $variables;
 
-	/**
-	 * @Serializer\SerializedName("orientation")
-	 * @Serializer\Type("string")
-	 * @var string
-	 */
-	protected $orientation;
+    /**
+     * @Serializer\SerializedName("options")
+     * @Serializer\Type("array")
+     * @var string
+     */
+    protected $options;
+
 
 	/**
 	 * AbstractSectionDefinition constructor.
@@ -96,34 +98,34 @@ abstract class AbstractSectionDefinition
 	}
 
 	/**
-	 * @param $anchor
+	 * @param $variables
 	 */
-	public function setAnchor($anchor)
+	public function setVariables($variables)
 	{
-		$this->anchor = $anchor;
+		$this->variables = $variables;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getAnchor()
+	public function getVariables()
 	{
-		return $this->anchor;
+		return $this->variables;
 	}
+
+    /**
+     * @param $options
+     */
+    public function setOptions($options)
+    {
+        $this->options = $options;
+    }
 
     /**
      * @return string
      */
-    public function getOrientation()
+    public function getOptions()
     {
-        return $this->orientation;
-    }
-
-    /**
-     * @param string $orientation
-     */
-    public function setOrientation($orientation)
-    {
-        $this->orientation = $orientation;
+        return $this->options;
     }
 }

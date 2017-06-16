@@ -8,6 +8,31 @@ use DocumentExportDefinition\Exception\InvalidArgumentException;
 
 class DocumentDefinition
 {
+    const OPTION_ADD_BREAKS_BETWEEN_SECTIONS = "addBreaksBetweenSections";
+    const OPTION_PAGE_NUMBERING = "pageNumbering";
+    const OPTION_ADD_TITLES = "addTitles";
+    const OPTION_DOWNLOAD_IMAGES = "downloadImages";
+
+    const PROPERTY_TITLE = "title";
+    const PROPERTY_CREATOR = "creator";
+    const PROPERTY_COMPANY = "company";
+    const PROPERTY_LOCALE = "locale";
+    const PROPERTY_DATE = 'date';
+
+    /**
+     * @Serializer\SerializedName("header")
+     * @Serializer\Type("DocumentExportDefinition\Section\AbstractSectionDefinition")
+     * @var AbstractSectionDefinition[]
+     */
+    protected $header = [];
+
+    /**
+     * @Serializer\SerializedName("footer")
+     * @Serializer\Type("DocumentExportDefinition\Section\AbstractSectionDefinition")
+     * @var AbstractSectionDefinition[]
+     */
+    protected $footer = [];
+
     /**
      * @Serializer\SerializedName("sections")
      * @Serializer\Type("array<DocumentExportDefinition\Section\AbstractSectionDefinition>")
@@ -21,17 +46,6 @@ class DocumentDefinition
      * @Serializer\Accessor(getter="getEncodedTemplate",setter="setEncodedTemplate")
      */
     protected $templateDocx;
-
-    const OPTION_ADD_BREAKS_BETWEEN_SECTIONS = "addBreaksBetweenSections";
-    const OPTION_PAGE_NUMBERING = "pageNumbering";
-    const OPTION_ADD_TITLES = "addTitles";
-    const OPTION_DOWNLOAD_IMAGES = "downloadImages";
-
-    const PROPERTY_TITLE = "title";
-    const PROPERTY_CREATOR = "creator";
-    const PROPERTY_COMPANY = "company";
-    const PROPERTY_LOCALE = "locale";
-    const PROPERTY_DATE = 'date';
 
     /**
      * @Serializer\SerializedName("options")
@@ -57,13 +71,6 @@ class DocumentDefinition
         self::PROPERTY_LOCALE => null,
         self::PROPERTY_DATE => null
     ];
-
-    /**
-     * @Serializer\SerializedName("variables")
-     * @Serializer\Type("array")
-     * @var array
-     */
-    protected $variables;
 
     /**
      * @param AbstractSectionDefinition $section
@@ -102,20 +109,6 @@ class DocumentDefinition
     public function getSections()
     {
         return $this->sections;
-    }
-
-    public function getVariable($variable)
-    {
-        if (array_key_exists($variable, $this->variables) === false) {
-            throw new InvalidArgumentException(sprintf("Invalid variable %s specified", $variable));
-        }
-
-        return $this->variables[$variable];
-    }
-
-    public function getAllVariables()
-    {
-        return $this->variables;
     }
 
     public function setOption($option, $value)
