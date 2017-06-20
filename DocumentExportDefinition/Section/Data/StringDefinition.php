@@ -2,7 +2,7 @@
 namespace DocumentExportDefinition\Section\Data;
 
 use JMS\Serializer\Annotation as Serializer;
-use DocumentExportDefinition\Section\Data\AbstractDataDefinition;
+use DocumentExportDefinition\Section\AbstractDataDefinition;
 
 class StringDefinition extends AbstractDataDefinition
 {

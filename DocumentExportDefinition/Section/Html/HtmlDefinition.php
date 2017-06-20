@@ -1,8 +1,7 @@
 <?php
 namespace DocumentExportDefinition\Section\Html;
 
-use DocumentExportDefinition\Section\AbstractSectionDefinition;
-use DocumentExportDefinition\Section\Data\AbstractDataDefinition;
+use DocumentExportDefinition\Section\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
 class HtmlDefinition extends AbstractDataDefinition
