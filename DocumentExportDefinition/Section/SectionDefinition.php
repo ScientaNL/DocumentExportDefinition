@@ -34,8 +34,6 @@ class SectionDefinition
      * @Serializer\SerializedName("options")
      * @Serializer\Type("array")
      */
-
-    /** @var array */
     protected $options = [
         self::OPTION_ADD_TITLES => null,
         self::OPTION_ADD_PAGE_BREAK => null,
