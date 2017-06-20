@@ -13,6 +13,12 @@ class StringDefinition extends AbstractDataDefinition
      */
     protected $value;
 
+    /**
+     * @Serializer\VirtualProperty
+     * @Serializer\SerializedName("type")
+     * @Serializer\Type("string")
+     * @return string
+     */
     public function getType()
 	{
 		return 'StringDefinition';
