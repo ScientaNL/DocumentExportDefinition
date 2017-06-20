@@ -28,7 +28,6 @@ abstract class AbstractDataDefinition
     /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("type")
-     * @Serializer\Type("string")
      * @return string
      */
     abstract public function getType();
