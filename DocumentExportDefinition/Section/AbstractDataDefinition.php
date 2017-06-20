@@ -4,7 +4,7 @@ namespace DocumentExportDefinition\Section;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
- * @Serializer\Discriminator(field = "type", map = {
+ * @Serializer\Discriminator(field = "objectType", map = {
  *    "String" :  "DocumentExportDefinition\Section\Data\StringDefinition",
  *    "File": "DocumentExportDefinition\Section\Data\FileDefinition",
  *    "TOC": "DocumentExportDefinition\Section\Data\TOCDefinition",
@@ -26,7 +26,7 @@ abstract class AbstractDataDefinition
 
     /**
      * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("type")
+     * @Serializer\SerializedName("objectType")
      * @Serializer\Type("string")
      * @return string
      */
