@@ -26,6 +26,7 @@ abstract class AbstractDataDefinition
 
     /**
      * @Serializer\VirtualProperty
+     * @Serializer\SerializedName("objectType")
      * @Serializer\Type("string")
      * @return string
      */
