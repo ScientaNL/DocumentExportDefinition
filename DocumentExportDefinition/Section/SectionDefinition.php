@@ -10,14 +10,14 @@ class SectionDefinition
 {
 	/**
 	 * @Serializer\SerializedName("title")
-	 * @Serializer\Type("AbstractDefinition")
+	 * @Serializer\Type("AbstractDataDefinition")
 	 * @var string
 	 */
 	protected $title;
 
 	/**
 	 * @Serializer\SerializedName("contents")
-	 * @Serializer\Type("AbstractDefinition")
+	 * @Serializer\Type("AbstractDataDefinition")
 	 * @var string
 	 */
 	protected $contents;
