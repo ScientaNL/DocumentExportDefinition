@@ -2,17 +2,13 @@
 
 namespace DocumentExportDefinition\Section;
 
+use DocumentExportDefinition\DocumentDefinition;
 use JMS\Serializer\Annotation as Serializer;
 use DocumentExportDefinition\Section\AbstractDataDefinition;
 
 class SectionDefinition
 {
-    const OPTION_ADD_TITLES = 'addTitles';
-    const OPTION_ADD_PAGE_BREAK = 'addPageBreak';
-    const OPTION_ORIENTATION = 'sectionOrientation';
-    const OPTION_PAGE_NUMBERING = 'pageNumbering';
-    const OPTION_DOWNLOAD_WORD_IMAGES = 'downloadWordImages';
-    /**
+       /**
      * @Serializer\SerializedName("title")
      * @Serializer\Type("DocumentExportDefinition\Section\AbstractDataDefinition")
      */
@@ -33,13 +29,16 @@ class SectionDefinition
     /**
      * @Serializer\SerializedName("options")
      * @Serializer\Type("array")
+     * @var array
      */
     protected $options = [
-        self::OPTION_ADD_TITLES => null,
-        self::OPTION_ADD_PAGE_BREAK => null,
-        self::OPTION_ORIENTATION => null,
-        self::OPTION_PAGE_NUMBERING => null,
-        self::OPTION_DOWNLOAD_WORD_IMAGES => null
+        DocumentDefinition::OPTION_ADD_TITLES => null,
+        DocumentDefinition::OPTION_ADD_PAGE_BREAK => null,
+        DocumentDefinition::OPTION_ORIENTATION => null,
+        DocumentDefinition::OPTION_PAGE_NUMBERING => null,
+        DocumentDefinition::OPTION_DOWNLOAD_IMAGES => null,
+        DocumentDefinition::OPTION_USE_STRICT_STYLES => null,
+        DocumentDefinition::OPTION_ANCHOR => null
     ];
 
     /**
