@@ -73,6 +73,22 @@ class DocumentDefinition
     ];
 
     /**
+     * @return SectionDefinition[]
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    /**
+     * @return SectionDefinition[]
+     */
+    public function getFooter()
+    {
+        return $this->footer;
+    }
+
+    /**
      * @param SectionDefinition $section
      */
     public function prependSection(SectionDefinition $section)
@@ -172,4 +188,5 @@ class DocumentDefinition
     {
         return base64_encode($this->templateDocx);
     }
+
 }

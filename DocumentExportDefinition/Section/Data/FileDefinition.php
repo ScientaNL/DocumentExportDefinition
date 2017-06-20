@@ -4,14 +4,14 @@ namespace DocumentExportDefinition\Section\Data;
 use DocumentExportDefinition\Section\AbstractSectionDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-class FileDefinition extends AbstractSectionDefinition
+class FileDefinition extends AbstractDataDefinition
 {
 	/**
-	 * @Serializer\SerializedName("contents")
+	 * @Serializer\SerializedName("value")
 	 * @Serializer\Type("array")
 	 * @var string
 	 */
-	protected $contents;
+	protected $value;
 
 	public function getType()
 	{

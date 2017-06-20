@@ -3,34 +3,35 @@
 namespace DocumentExportDefinition\Section;
 
 use JMS\Serializer\Annotation as Serializer;
+use DocumentExportDefinition\Section\Data\StringDefinition;
 
 
 class SectionDefinition
 {
 	/**
 	 * @Serializer\SerializedName("title")
-	 * @Serializer\Type("array")
+	 * @Serializer\Type("AbstractDefinition")
 	 * @var string
 	 */
 	protected $title;
 
 	/**
 	 * @Serializer\SerializedName("contents")
-	 * @Serializer\Type("array")
+	 * @Serializer\Type("AbstractDefinition")
 	 * @var string
 	 */
 	protected $contents;
 
 	/**
 	 * @Serializer\SerializedName("variables")
-	 * @Serializer\Type("array")
+	 * @Serializer\Type("AbstractDataDefinition")
 	 * @var string
 	 */
 	protected $variables;
 
     /**
      * @Serializer\SerializedName("options")
-     * @Serializer\Type("array")
+     * @Serializer\Type("AbstractDataDefinition")
      * @var string
      */
     protected $options;

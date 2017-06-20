@@ -4,7 +4,7 @@ namespace DocumentExportDefinition\Section\Encoded;
 use DocumentExportDefinition\Section\AbstractSectionDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
+abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 {
 	/**
 	 * @Serializer\SerializedName("fileId")
