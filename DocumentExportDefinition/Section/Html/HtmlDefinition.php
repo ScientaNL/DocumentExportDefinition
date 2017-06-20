@@ -2,9 +2,10 @@
 namespace DocumentExportDefinition\Section\Html;
 
 use DocumentExportDefinition\Section\AbstractSectionDefinition;
+use DocumentExportDefinition\Section\Data\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-class HtmlDefinition extends AbstractSectionDefinition
+class HtmlDefinition extends AbstractDataDefinition
 {
 	/**
 	 * @Serializer\SerializedName("images")

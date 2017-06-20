@@ -24,6 +24,7 @@ abstract class AbstractDataDefinition
      */
     protected $value;
 
+
     /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("type")
