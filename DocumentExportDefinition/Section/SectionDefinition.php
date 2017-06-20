@@ -9,25 +9,25 @@ class SectionDefinition
 {
 	/**
 	 * @Serializer\SerializedName("title")
-	 * @Serializer\Type("AbstractDataDefinition")
+	 * @Serializer\Type("DocumentExportDefinition\Section\Data\AbstractDataDefinition")
 	 */
 	protected $title;
 
 	/**
 	 * @Serializer\SerializedName("contents")
-	 * @Serializer\Type("AbstractDataDefinition")
+	 * @Serializer\Type("DocumentExportDefinition\Section\Data\AbstractDataDefinition")
 	 */
 	protected $contents;
 
 	/**
 	 * @Serializer\SerializedName("variables")
-	 * @Serializer\Type("array<AbstractDataDefinition>")
+	 * @Serializer\Type("array<DocumentExportDefinition\Section\Data\AbstractDataDefinition>")
 	 */
 	protected $variables;
 
     /**
      * @Serializer\SerializedName("options")
-     * @Serializer\Type("AbstractDataDefinition")
+     * @Serializer\Type("DocumentExportDefinition\Section\Data\AbstractDataDefinition")
      */
     protected $options;
 
