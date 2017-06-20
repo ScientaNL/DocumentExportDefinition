@@ -17,10 +17,10 @@ use JMS\Serializer\Annotation as Serializer;
  */
 abstract class AbstractDataDefinition
 {
-
     /**
      * @Serializer\SerializedName("value")
-     * @Serializer\Type("object")
+     * @Serializer\Type("string")
+     * @var string
      */
     protected $value;
 
