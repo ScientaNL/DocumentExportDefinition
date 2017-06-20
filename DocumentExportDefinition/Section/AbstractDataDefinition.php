@@ -17,13 +17,12 @@ use JMS\Serializer\Annotation as Serializer;
  */
 abstract class AbstractDataDefinition
 {
-	/**
-	 * @Serializer\SerializedName("value")
-	 * @Serializer\Type("object")
-	 * @var object
-	 */
-	protected $value;
 
+    /**
+     * @Serializer\SerializedName("value")
+     * @Serializer\Type("object")
+     */
+    protected $value;
 
     /**
      * @Serializer\VirtualProperty

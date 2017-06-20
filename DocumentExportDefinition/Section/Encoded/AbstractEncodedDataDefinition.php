@@ -1,7 +1,7 @@
 <?php
 namespace DocumentExportDefinition\Section\Encoded;
 
-use DocumentExportDefinition\Section\AbstractSectionDefinition;
+use DocumentExportDefinition\Section\Data\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
 abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
@@ -33,11 +33,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	 */
 	protected $contents;
 
-	/**
-	 * AbstractSectionDefinition constructor.
-	 * @param null $title
-	 * @param null $contents
-	 */
+
 	public function __construct($title = null, $contents = null)
 	{
 		parent::__construct($title, $contents);
