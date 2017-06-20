@@ -3,6 +3,7 @@
 namespace DocumentExportDefinition\Section;
 
 use DocumentExportDefinition\DocumentDefinition;
+use InvalidArgumentException;
 use JMS\Serializer\Annotation as Serializer;
 use DocumentExportDefinition\Section\AbstractDataDefinition;
 
@@ -107,20 +108,22 @@ class SectionDefinition
         return $this->variables;
     }
 
-    /**
-     * @param $options
-     */
-    public function setOptions($options)
+    public function setOption($option, $value)
     {
-        $this->options = $options;
+        if (array_key_exists($option, $this->options) === false) {
+            throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
+        }
+
+        $this->options[$option] = $value;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getOptions()
+    public function getOption($option)
     {
-        return $this->options;
+        if (array_key_exists($option, $this->options) === false) {
+            throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
+        }
+
+        return $this->options[$option];
     }
 
     /**
