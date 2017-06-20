@@ -1,5 +1,5 @@
 <?php
-namespace DocumentExportDefinition\Section\Data;
+namespace DocumentExportDefinition\Section;
 
 use JMS\Serializer\Annotation as Serializer;
 
