@@ -6,7 +6,10 @@ use JMS\Serializer\Annotation as Serializer;
 
 class StringDefinition extends AbstractDataDefinition
 {
-	public function getType()
+    /**
+     * @Serializer\VirtualProperty
+     */
+    public function getType()
 	{
 		return 'StringDefinition';
 	}
