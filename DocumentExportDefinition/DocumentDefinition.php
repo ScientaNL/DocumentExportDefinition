@@ -22,16 +22,16 @@ class DocumentDefinition
     /**
      * @Serializer\SerializedName("header")
      * @Serializer\Type("DocumentExportDefinition\Section\SectionDefinition")
-     * @var SectionDefinition[]
+     * @var SectionDefinition
      */
-    protected $header = [];
+    protected $header;
 
     /**
      * @Serializer\SerializedName("footer")
      * @Serializer\Type("DocumentExportDefinition\Section\SectionDefinition")
-     * @var SectionDefinition[]
+     * @var SectionDefinition
      */
-    protected $footer = [];
+    protected $footer;
 
     /**
      * @Serializer\SerializedName("sections")
@@ -73,7 +73,7 @@ class DocumentDefinition
     ];
 
     /**
-     * @return SectionDefinition[]
+     * @return SectionDefinition
      */
     public function getHeader()
     {
@@ -81,7 +81,7 @@ class DocumentDefinition
     }
 
     /**
-     * @return SectionDefinition[]
+     * @return SectionDefinition
      */
     public function getFooter()
     {
