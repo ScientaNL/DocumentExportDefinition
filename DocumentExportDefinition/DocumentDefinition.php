@@ -3,7 +3,6 @@
 namespace DocumentExportDefinition;
 
 use DocumentExportDefinition\Section\SectionDefinition;
-use DocumentExportDefinition\Section\Data\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 use DocumentExportDefinition\Exception\InvalidArgumentException;
 

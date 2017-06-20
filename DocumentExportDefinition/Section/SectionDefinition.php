@@ -31,6 +31,12 @@ class SectionDefinition
      */
     protected $options;
 
+    /**
+     * @Serializer\SerializedName("images")
+     * @Serializer\Type("array<AbstractEncodedDataDefinition>")
+     */
+    protected $images;
+
 
 	/**
 	 * AbstractSectionDefinition constructor.
@@ -105,5 +111,21 @@ class SectionDefinition
     public function getOptions()
     {
         return $this->options;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param mixed $images
+     */
+    public function setImages($images)
+    {
+        $this->images = $images;
     }
 }
