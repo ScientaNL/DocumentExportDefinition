@@ -6,6 +6,9 @@ use DocumentExportDefinition\Section\AbstractDataDefinition;
 
 class StringDefinition extends AbstractDataDefinition
 {
+    /**
+     * @Serializer\VirtualProperty
+     */
 	public function getType()
 	{
 		return 'StringDefinition';
