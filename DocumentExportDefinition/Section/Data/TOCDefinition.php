@@ -6,9 +6,6 @@ use JMS\Serializer\Annotation as Serializer;
 
 class TOCDefinition extends AbstractDataDefinition
 {
-    /**
-     * @Serializer\VirtualProperty
-     */
 	public function getType()
 	{
 		return 'TOCDefinition';

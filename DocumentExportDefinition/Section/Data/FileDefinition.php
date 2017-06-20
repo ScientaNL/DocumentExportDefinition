@@ -6,10 +6,7 @@ use JMS\Serializer\Annotation as Serializer;
 
 class FileDefinition extends AbstractDataDefinition
 {
-    /**
-     * @Serializer\VirtualProperty
-     */
-	public function getType()
+    public function getType()
 	{
 		return 'FileDefinition';
 	}
