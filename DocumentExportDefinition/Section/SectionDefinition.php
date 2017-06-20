@@ -27,7 +27,7 @@ class SectionDefinition
 
     /**
      * @Serializer\SerializedName("options")
-     * @Serializer\Type("DocumentExportDefinition\Section\AbstractDataDefinition")
+     * @Serializer\Type("array")
      */
     protected $options;
 
@@ -106,7 +106,7 @@ class SectionDefinition
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getOptions()
     {

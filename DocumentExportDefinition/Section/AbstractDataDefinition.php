@@ -8,7 +8,6 @@ use JMS\Serializer\Annotation as Serializer;
  *    "String": "DocumentExportDefinition\Section\Data\StringDefinition",
  *    "PageNumber": "DocumentExportDefinition\Section\Data\PageNumberDefinition",
  *    "File": "DocumentExportDefinition\Section\Data\FileDefinition",
- *    "Options": "DocumentExportDefinition\Section\Data\OptionsDefinition",
  *    "Docx": "DocumentExportDefinition\Section\Encoded\DocxDefinition",
  *    "Flowchart": "DocumentExportDefinition\Section\Encoded\FlowchartDefinition",
  *    "Image": "DocumentExportDefinition\Section\Encoded\ImageDefinition",
