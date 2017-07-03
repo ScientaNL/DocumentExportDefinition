@@ -104,7 +104,7 @@ class SectionDefinition
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getVariables()
     {
