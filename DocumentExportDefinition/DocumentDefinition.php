@@ -9,7 +9,7 @@ class DocumentDefinition
 {
     const OPTION_ADD_TITLES = 'addTitles';
     const OPTION_ADD_PAGE_BREAK = 'addPageBreak';
-    const OPTION_ORIENTATION = 'sectionOrientation';
+    const OPTION_ORIENTATION = 'orientation';
     const OPTION_PAGE_NUMBERING = 'pageNumbering';
     const OPTION_DOWNLOAD_IMAGES = 'downloadImages';
     const OPTION_USE_STRICT_STYLES = 'useStrictStyles';
