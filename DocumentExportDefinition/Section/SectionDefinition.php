@@ -9,7 +9,7 @@ use DocumentExportDefinition\Section\AbstractDataDefinition;
 
 class SectionDefinition
 {
-    const OPTION_NEXT_SECTION_ORIENTATION = 'orientation';
+    const OPTION_NEXT_SECTION_ORIENTATION = 'nextSectionOrientation';
 
        /**
      * @Serializer\SerializedName("title")
