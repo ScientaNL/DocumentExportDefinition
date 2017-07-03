@@ -100,7 +100,9 @@ class SectionDefinition
      */
     public function setVariables($variables)
     {
-        $this->variables = $variables;
+        foreach($variables as $key => $variable){
+            $this->variables[$key] = $variable;
+        }
     }
 
     /**
