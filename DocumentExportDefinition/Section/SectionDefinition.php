@@ -119,7 +119,7 @@ class SectionDefinition
     public function getOption($option)
     {
         if (array_key_exists($option, $this->options) === false) {
-            throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
+            return false;
         }
 
         return $this->options[$option];
