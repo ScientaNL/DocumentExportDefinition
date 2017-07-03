@@ -25,7 +25,7 @@ class SectionDefinition
 
     /**
      * @Serializer\SerializedName("variables")
-     * @Serializer\Type("array<DocumentExportDefinition\Section\AbstractDataDefinition>")
+     * @Serializer\Type("array<string, DocumentExportDefinition\Section\AbstractDataDefinition>")
      */
     protected $variables;
 
@@ -100,9 +100,7 @@ class SectionDefinition
      */
     public function setVariables($variables)
     {
-        foreach($variables as $key => $variable){
-            $this->variables[$key] = $variable;
-        }
+            $this->variables = $variables;
     }
 
     /**
