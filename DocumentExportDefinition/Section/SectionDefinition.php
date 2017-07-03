@@ -9,6 +9,8 @@ use DocumentExportDefinition\Section\AbstractDataDefinition;
 
 class SectionDefinition
 {
+    const OPTION_NEXT_SECTION_ORIENTATION = 'orientation';
+
        /**
      * @Serializer\SerializedName("title")
      * @Serializer\Type("DocumentExportDefinition\Section\AbstractDataDefinition")
@@ -36,6 +38,7 @@ class SectionDefinition
         DocumentDefinition::OPTION_ADD_TITLES => null,
         DocumentDefinition::OPTION_ADD_PAGE_BREAK => null,
         DocumentDefinition::OPTION_ORIENTATION => null,
+        self::OPTION_NEXT_SECTION_ORIENTATION => null,
         DocumentDefinition::OPTION_PAGE_NUMBERING => null,
         DocumentDefinition::OPTION_DOWNLOAD_IMAGES => null,
         DocumentDefinition::OPTION_USE_STRICT_STYLES => null,
