@@ -31,4 +31,12 @@ abstract class AbstractDataDefinition
      * @return string
      */
     abstract public function getType();
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
 }
