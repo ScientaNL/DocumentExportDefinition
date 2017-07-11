@@ -13,6 +13,8 @@ class DocumentDefinition
     const PROPERTY_LOCALE = "locale";
     const PROPERTY_DATE = 'date';
 
+    const OPTION_MERGE = 'mergeDocuments';
+
     /**
      * @Serializer\SerializedName("header")
      * @Serializer\Type("DocumentExportDefinition\Section\SectionDefinition")
@@ -41,6 +43,14 @@ class DocumentDefinition
      */
     protected $templateDocx;
 
+    /**
+     * @Serializer\SerializedName("options")
+     * @Serializer\Type("array")
+     * @var array
+     */
+    protected $options = [
+        self::OPTION_MERGE => null,
+    ];
 
     /**
      * @Serializer\SerializedName("documentProperties")
