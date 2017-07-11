@@ -9,9 +9,13 @@ use DocumentExportDefinition\Section\AbstractDataDefinition;
 
 class SectionDefinition
 {
+    const OPTION_ANCHOR = 'anchor';
+    const OPTION_DOWNLOAD_IMAGES = 'downloadImages';
+    const OPTION_USE_STRICT_STYLES = 'useStrictStyles';
+    const OPTION_ORIENTATION = 'orientation';
     const OPTION_NEXT_SECTION_ORIENTATION = 'nextSectionOrientation';
 
-       /**
+    /**
      * @Serializer\SerializedName("title")
      * @Serializer\Type("DocumentExportDefinition\Section\AbstractDataDefinition")
      */
@@ -35,14 +39,11 @@ class SectionDefinition
      * @var array
      */
     protected $options = [
-        DocumentDefinition::OPTION_ADD_TITLES => null,
-        DocumentDefinition::OPTION_ADD_PAGE_BREAK => null,
-        DocumentDefinition::OPTION_ORIENTATION => null,
+        self::OPTION_ANCHOR => null,
+        self::OPTION_DOWNLOAD_IMAGES => null,
+        self::OPTION_USE_STRICT_STYLES => null,
+        self::OPTION_ORIENTATION => null,
         self::OPTION_NEXT_SECTION_ORIENTATION => null,
-        DocumentDefinition::OPTION_PAGE_NUMBERING => null,
-        DocumentDefinition::OPTION_DOWNLOAD_IMAGES => null,
-        DocumentDefinition::OPTION_USE_STRICT_STYLES => null,
-        DocumentDefinition::OPTION_ANCHOR => null
     ];
 
     /**

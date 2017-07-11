@@ -7,14 +7,6 @@ use DocumentExportDefinition\Exception\InvalidArgumentException;
 
 class DocumentDefinition
 {
-    const OPTION_ADD_TITLES = 'addTitles';
-    const OPTION_ADD_PAGE_BREAK = 'addPageBreak';
-    const OPTION_ORIENTATION = 'orientation';
-    const OPTION_PAGE_NUMBERING = 'pageNumbering';
-    const OPTION_DOWNLOAD_IMAGES = 'downloadImages';
-    const OPTION_USE_STRICT_STYLES = 'useStrictStyles';
-    const OPTION_ANCHOR = 'anchor';
-
     const PROPERTY_TITLE = "title";
     const PROPERTY_CREATOR = "creator";
     const PROPERTY_COMPANY = "company";
@@ -49,20 +41,6 @@ class DocumentDefinition
      */
     protected $templateDocx;
 
-    /**
-     * @Serializer\SerializedName("options")
-     * @Serializer\Type("array")
-     * @var array
-     */
-    protected $options = [
-        self::OPTION_ADD_TITLES => null,
-        self::OPTION_ADD_PAGE_BREAK => null,
-        self::OPTION_ORIENTATION => null,
-        self::OPTION_PAGE_NUMBERING => null,
-        self::OPTION_DOWNLOAD_IMAGES => null,
-        self::OPTION_USE_STRICT_STYLES => null,
-        self::OPTION_ANCHOR => null
-    ];
 
     /**
      * @Serializer\SerializedName("documentProperties")
