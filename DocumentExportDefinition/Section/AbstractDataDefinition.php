@@ -12,7 +12,7 @@ use JMS\Serializer\Annotation as Serializer;
  *    "Flowchart": "DocumentExportDefinition\Section\Encoded\FlowchartDefinition",
  *    "Image": "DocumentExportDefinition\Section\Encoded\ImageDefinition",
  *    "Html": "DocumentExportDefinition\Section\Html\HtmlDefinition",
- *    "HtmlImage": "DocumentExportDefinition\Section\Html\HtmlImageDefinition"
+ *    "HtmlImage": "DocumentExportDefinition\Section\Html\HtmlImageDefinition",
  *    "TOC": "DocumentExportDefinition\Section\Html\TOCDefinition"
  * })
  */
