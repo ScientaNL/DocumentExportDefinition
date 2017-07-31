@@ -49,7 +49,7 @@ class SectionDefinition
 
     /**
      * @Serializer\SerializedName("images")
-     * @Serializer\Type("array<AbstractEncodedDataDefinition>")
+     * @Serializer\Type("array<DocumentExportDefinition\Section\Encoded\AbstractEncodedDataDefinition>")
      */
     protected $images;
 
