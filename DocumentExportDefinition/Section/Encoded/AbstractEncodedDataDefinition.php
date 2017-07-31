@@ -25,35 +25,35 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	protected $extension;
 
 	/**
-	 * @Serializer\SerializedName("contents")
+	 * @Serializer\SerializedName("value")
 	 * @Serializer\Type("string")
-	 * @Serializer\Accessor(getter="getEncodedContents",setter="setEncodedContents")
+	 * @Serializer\Accessor(getter="getEncodedValue",setter="setEncodedValue")
 	 *
 	 * @var string
 	 */
-	protected $contents;
+	protected $value;
 
 
-	public function __construct($title = null, $contents = null)
+	public function __construct($title = null, $value = null)
 	{
-		parent::__construct($title, $contents);
+		parent::__construct($title, $value);
 		$this->fileId = uniqid($this->getType());
 	}
 
 	/**
-	 * @param $contents
+	 * @param $value
 	 */
-	public function setEncodedContents($contents)
+	public function setEncodedValue($value)
 	{
-		$this->contents = base64_decode($contents);
+		$this->value = base64_decode($value);
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEncodedContents()
+	public function getEncodedValue()
 	{
-		return base64_encode($this->contents);
+		return base64_encode($this->value);
 	}
 
 	/**
