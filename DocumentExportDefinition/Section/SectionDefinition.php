@@ -5,7 +5,6 @@ namespace DocumentExportDefinition\Section;
 use DocumentExportDefinition\DocumentDefinition;
 use InvalidArgumentException;
 use JMS\Serializer\Annotation as Serializer;
-use DocumentExportDefinition\Section\AbstractDataDefinition;
 
 class SectionDefinition
 {
@@ -48,7 +47,7 @@ class SectionDefinition
 
     /**
      * @Serializer\SerializedName("images")
-     * @Serializer\Type("array<DocumentExportDefinition\Section\Encoded\ImageDefinition>")
+     * @Serializer\Type("array<string>")
      */
     protected $images;
 
