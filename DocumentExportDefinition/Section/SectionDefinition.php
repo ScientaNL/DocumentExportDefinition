@@ -6,6 +6,7 @@ use DocumentExportDefinition\DocumentDefinition;
 use InvalidArgumentException;
 use JMS\Serializer\Annotation as Serializer;
 use DocumentExportDefinition\Section\AbstractDataDefinition;
+use DocumentExportDefinition\Section\Encoded\AbstractEncodedDataDefinition;
 
 class SectionDefinition
 {
