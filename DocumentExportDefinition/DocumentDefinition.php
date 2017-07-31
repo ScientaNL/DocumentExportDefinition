@@ -15,6 +15,7 @@ class DocumentDefinition
 
     const OPTION_MERGE = 'mergeDocuments';
     const OPTION_BASE_URL = 'baseUrl';
+    const OPTION_WORD_SECTIONS = 'wordSections';
 
     /**
      * @Serializer\SerializedName("header")
@@ -51,7 +52,8 @@ class DocumentDefinition
      */
     protected $options = [
         self::OPTION_MERGE => null,
-        self::OPTION_BASE_URL => null
+        self::OPTION_BASE_URL => null,
+        self::OPTION_WORD_SECTIONS => null
     ];
 
     /**

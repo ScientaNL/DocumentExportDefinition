@@ -14,7 +14,6 @@ class SectionDefinition
     const OPTION_USE_STRICT_STYLES = 'useStrictStyles';
     const OPTION_ORIENTATION = 'orientation';
     const OPTION_NEXT_SECTION_ORIENTATION = 'nextSectionOrientation';
-    const OPTION_ADD_PAGE_BREAK = 'addPageBreak';
 
     /**
      * @Serializer\SerializedName("title")
@@ -44,8 +43,7 @@ class SectionDefinition
         self::OPTION_DOWNLOAD_IMAGES => null,
         self::OPTION_USE_STRICT_STYLES => null,
         self::OPTION_ORIENTATION => null,
-        self::OPTION_NEXT_SECTION_ORIENTATION => null,
-        self::OPTION_ADD_PAGE_BREAK => null,
+        self::OPTION_NEXT_SECTION_ORIENTATION => null
     ];
 
     /**
