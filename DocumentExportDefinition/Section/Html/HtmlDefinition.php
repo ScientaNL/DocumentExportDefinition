@@ -19,6 +19,12 @@ class HtmlDefinition extends AbstractDataDefinition
 	 */
 	protected $useStrictStyles = true;
 
+    /**
+     * @Serializer\VirtualProperty
+     * @Serializer\SerializedName("objectType")
+     * @Serializer\Type("string")
+     * @return string
+     */
 	public function getType()
 	{
 		return 'HtmlDefinition';
@@ -40,12 +46,18 @@ class HtmlDefinition extends AbstractDataDefinition
 		return $this->images;
 	}
 
-	public function setUseStrictStyles($useStrictStyles)
+    /**
+     * @param $useStrictStyles
+     */
+    public function setUseStrictStyles($useStrictStyles)
 	{
 		$this->useStrictStyles = $useStrictStyles;
 	}
 
-	public function getUseStrictStyles()
+    /**
+     * @return bool
+     */
+    public function getUseStrictStyles()
 	{
 		return $this->useStrictStyles;
 	}

@@ -6,6 +6,12 @@ use JMS\Serializer\Annotation as Serializer;
 
 class PageNumberDefinition extends AbstractDataDefinition
 {
+    /**
+     * @Serializer\VirtualProperty
+     * @Serializer\SerializedName("objectType")
+     * @Serializer\Type("string")
+     * @return string
+     */
     public function getType()
     {
         return 'PageNumberDefinition';
