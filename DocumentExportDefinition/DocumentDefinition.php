@@ -13,9 +13,9 @@ class DocumentDefinition
     const PROPERTY_LOCALE = "locale";
     const PROPERTY_DATE = 'date';
 
-    const OPTION_MERGE = 'mergeDocuments';
     const OPTION_BASE_URL = 'baseUrl';
-    const OPTION_WORD_SECTIONS = 'wordSections';
+    const OPTION_MERGE = 'mergeDocuments';
+    const OPTION_CONTINUOUS = 'mergeContinuous';
 
     /**
      * @Serializer\SerializedName("header")
@@ -51,9 +51,9 @@ class DocumentDefinition
      * @var array
      */
     protected $options = [
-        self::OPTION_MERGE => null,
         self::OPTION_BASE_URL => null,
-        self::OPTION_WORD_SECTIONS => null
+        self::OPTION_MERGE => null,
+        self::OPTION_CONTINUOUS => null
     ];
 
     /**
