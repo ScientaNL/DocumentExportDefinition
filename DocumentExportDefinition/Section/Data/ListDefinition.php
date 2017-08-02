@@ -5,7 +5,7 @@ namespace DocumentExportDefinition\Section\Data;
 use DocumentExportDefinition\Section\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-class TOCDefinition extends AbstractDataDefinition
+class ListDefinition extends AbstractDataDefinition
 {
     /**
     * @Serializer\SerializedName("value")
