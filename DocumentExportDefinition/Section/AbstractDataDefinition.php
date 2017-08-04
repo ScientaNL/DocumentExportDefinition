@@ -5,7 +5,6 @@ use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "objectType", map = {
- *    "List": "DocumentExportDefinition\Section\Data\ListDefinition",
  *    "String": "DocumentExportDefinition\Section\Data\StringDefinition",
  *    "PageNumber": "DocumentExportDefinition\Section\Data\PageNumberDefinition",
  *    "File": "DocumentExportDefinition\Section\Data\FileDefinition",
