@@ -13,6 +13,12 @@ class FileDefinition extends AbstractDataDefinition
     protected $fileSize;
 
     /**
+     * @Serializer\SerializedName("fileName")
+     * @Serializer\Type("string")
+     */
+    protected $fileName;
+
+    /**
      * @Serializer\SerializedName("fileType")
      * @Serializer\Type("string")
      */
@@ -46,6 +52,14 @@ class FileDefinition extends AbstractDataDefinition
     /**
      * @return mixed
      */
+    public function getFileName()
+    {
+        return $this->fileName;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getFileType()
     {
         return $this->fileType;
@@ -58,4 +72,5 @@ class FileDefinition extends AbstractDataDefinition
     {
         return $this->description;
     }
+
 }
