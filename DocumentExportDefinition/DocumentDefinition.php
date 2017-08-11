@@ -14,8 +14,8 @@ class DocumentDefinition
     const PROPERTY_DATE = 'date';
 
     const OPTION_BASE_URL = 'baseUrl';
-    const OPTION_MERGE = 'mergeDocuments';
-    const OPTION_CONTINUOUS = 'mergeContinuous';
+    const OPTION_MERGE_DOCUMENTS = 'mergeDocuments';
+    const OPTION_MERGE_CONTINUOUS = 'mergeContinuous';
 
     /**
      * @Serializer\SerializedName("header")
@@ -52,8 +52,8 @@ class DocumentDefinition
      */
     protected $options = [
         self::OPTION_BASE_URL => null,
-        self::OPTION_MERGE => null,
-        self::OPTION_CONTINUOUS => null
+        self::OPTION_MERGE_DOCUMENTS => null,
+        self::OPTION_MERGE_CONTINUOUS => null
     ];
 
     /**
