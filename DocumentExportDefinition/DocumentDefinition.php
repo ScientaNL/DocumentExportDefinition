@@ -14,8 +14,8 @@ class DocumentDefinition
     const PROPERTY_DATE = 'date';
 
     const OPTION_BASE_URL = 'baseUrl';
-    const OPTION_MERGE = 'mergeDocuments';
-    const OPTION_CONTINUOUS = 'mergeContinuous';
+    const OPTION_MERGE_DOCUMENTS = 'mergeDocuments';
+    const OPTION_MERGE_CONTINUOUS = 'mergeContinuous';
 
     /**
      * @Serializer\SerializedName("header")
