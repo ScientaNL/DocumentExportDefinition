@@ -17,6 +17,9 @@ class DocumentDefinition
     const OPTION_MERGE_DOCUMENTS = 'mergeDocuments';
     const OPTION_MERGE_CONTINUOUS = 'mergeContinuous';
 
+    const PORTRAIT = 'portrait';
+    const LANDSCAPE = 'landscape';
+
     /**
      * @Serializer\SerializedName("header")
      * @Serializer\Type("DocumentExportDefinition\Section\SectionDefinition")
