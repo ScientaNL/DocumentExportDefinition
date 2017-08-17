@@ -7,6 +7,13 @@ use JMS\Serializer\Annotation as Serializer;
 class TOCDefinition extends AbstractDataDefinition
 {
     /**
+     * @Serializer\SerializedName("value")
+     * @Serializer\Type("array")
+     * @var array
+     */
+    protected $value;
+
+    /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("objectType")
      * @Serializer\Type("string")
@@ -16,4 +23,12 @@ class TOCDefinition extends AbstractDataDefinition
 	{
 		return 'TOCDefinition';
 	}
+
+    /**
+     * @return array
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
 }

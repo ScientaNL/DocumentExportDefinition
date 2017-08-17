@@ -35,7 +35,7 @@ abstract class AbstractDataDefinition
     abstract public function getType();
 
     /**
-     * @return string
+     * @return string|array
      */
     public function getValue()
     {
