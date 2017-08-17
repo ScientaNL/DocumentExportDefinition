@@ -13,7 +13,7 @@ use JMS\Serializer\Annotation as Serializer;
  *    "Image": "DocumentExportDefinition\Section\Encoded\ImageDefinition",
  *    "Html": "DocumentExportDefinition\Section\Html\HtmlDefinition",
  *    "HtmlImage": "DocumentExportDefinition\Section\Html\HtmlImageDefinition",
- *    "TOC": "DocumentExportDefinition\Section\Data\TOCDefinition"
+ *    "TOC": "DocumentExportDefinition\Section\Data\TOCDefinition",
  *    "TOCAT": "DocumentExportDefinition\Section\Data\TOCATDefinition"
  * })
  */
