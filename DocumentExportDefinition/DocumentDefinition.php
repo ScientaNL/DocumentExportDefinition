@@ -9,16 +9,20 @@ class DocumentDefinition
 {
     const PROPERTY_TITLE = "title";
     const PROPERTY_CREATOR = "creator";
+    const PROPERTY_KEYWORDS = "keywords";
+    const PROPERTY_DESCRIPTION = "description";
+    const PROPERTY_CATEGORY = "category";
+    const PROPERTY_CONTENT_STATUS = "contentStatus";
     const PROPERTY_COMPANY = "company";
-    const PROPERTY_LOCALE = "locale";
     const PROPERTY_DATE = 'date';
+    const PROPERTY_LOCALE = "locale";
 
     const OPTION_BASE_URL = 'baseUrl';
     const OPTION_MERGE_DOCUMENTS = 'mergeDocuments';
     const OPTION_MERGE_CONTINUOUS = 'mergeContinuous';
 
-    const PORTRAIT = 'portrait';
     const LANDSCAPE = 'landscape';
+    const PORTRAIT = 'portrait';
 
     /**
      * @Serializer\SerializedName("header")
@@ -67,9 +71,13 @@ class DocumentDefinition
     protected $documentProperties = [
         self::PROPERTY_TITLE => null,
         self::PROPERTY_CREATOR => null,
+        self::PROPERTY_KEYWORDS => null,
+        self::PROPERTY_DESCRIPTION => null,
+        self::PROPERTY_CATEGORY => null,
+        self::PROPERTY_CONTENT_STATUS => null,
         self::PROPERTY_COMPANY => null,
-        self::PROPERTY_LOCALE => null,
-        self::PROPERTY_DATE => null
+        self::PROPERTY_DATE => null,
+        self::PROPERTY_LOCALE => null
     ];
 
     /**
