@@ -4,8 +4,15 @@ namespace DocumentExportDefinition\Section\Data;
 use DocumentExportDefinition\Section\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-class TOCDefinition extends AbstractDataDefinition
+class TOCATDefinition extends AbstractDataDefinition
 {
+    /**
+     * @Serializer\SerializedName("value")
+     * @Serializer\Type("array")
+     * @var array
+     */
+    protected $value;
+
     /**
      * @Serializer\SerializedName("title")
      * @Serializer\Type("string")
