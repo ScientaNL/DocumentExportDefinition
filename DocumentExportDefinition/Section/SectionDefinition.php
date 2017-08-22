@@ -14,18 +14,6 @@ class SectionDefinition
     const OPTION_NEXT_SECTION_ORIENTATION = 'nextSectionOrientation';
 
     /**
-     * @Serializer\SerializedName("title")
-     * @Serializer\Type("DocumentExportDefinition\Section\AbstractDataDefinition")
-     */
-    protected $title;
-
-    /**
-     * @Serializer\SerializedName("contents")
-     * @Serializer\Type("DocumentExportDefinition\Section\AbstractDataDefinition")
-     */
-    protected $contents;
-
-    /**
      * @Serializer\SerializedName("variables")
      * @Serializer\Type("array<string, DocumentExportDefinition\Section\AbstractDataDefinition>")
      */
@@ -77,23 +65,7 @@ class SectionDefinition
         return $this->title;
     }
 
-    /**
-     * @param string $contents
-     */
-    public function setContents($contents)
-    {
-        $this->contents = $contents;
-    }
-
-    /**
-     * @return string
-     */
-    public function getContents()
-    {
-        return $this->contents;
-    }
-
-    /**
+       /**
      * @param $variables
      */
     public function setVariables($variables)
@@ -109,12 +81,20 @@ class SectionDefinition
         return $this->variables;
     }
 
-    public function setOption($option, $value)
+	/**
+	 * @param $option
+	 * @param $value
+	 */
+	public function setOption($option, $value)
     {
         $this->options[$option] = $value;
     }
 
-    public function getOption($option)
+	/**
+	 * @param $option
+	 * @return bool|mixed
+	 */
+	public function getOption($option)
     {
         if (array_key_exists($option, $this->options) === false) {
             return false;
