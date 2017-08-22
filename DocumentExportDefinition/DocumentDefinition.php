@@ -178,21 +178,4 @@ class DocumentDefinition
     {
         return $this->templateDocx;
     }
-
-    /**
-     * @param $templateFile
-     */
-    public function setEncodedTemplate($templateFile)
-    {
-        $this->templateDocx = base64_decode($templateFile);
-    }
-
-    /**
-     * @return string
-     */
-    public function getEncodedTemplate()
-    {
-        return base64_encode($this->templateDocx);
-    }
-
 }
