@@ -19,7 +19,6 @@ use JMS\Serializer\Annotation as Serializer;
  */
 abstract class AbstractDataDefinition
 {
-
     /**
      * @Serializer\SerializedName("value")
      * @Serializer\Type("string")
@@ -42,4 +41,12 @@ abstract class AbstractDataDefinition
     {
         return $this->value;
     }
+
+	/**
+	 * @param string $value
+	 */
+	public function setValue(string $value)
+	{
+		$this->value = $value;
+	}
 }
