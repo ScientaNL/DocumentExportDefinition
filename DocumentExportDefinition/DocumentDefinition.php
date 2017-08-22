@@ -18,7 +18,6 @@ class DocumentDefinition
     const PROPERTY_LOCALE = "locale";
 
     const OPTION_BASE_URL = 'baseUrl';
-    const OPTION_MERGE_DOCUMENTS = 'mergeDocuments';
     const OPTION_MERGE_CONTINUOUS = 'mergeContinuous';
 
     const LANDSCAPE = 'landscape';
@@ -59,7 +58,6 @@ class DocumentDefinition
      */
     protected $options = [
         self::OPTION_BASE_URL => null,
-        self::OPTION_MERGE_DOCUMENTS => null,
         self::OPTION_MERGE_CONTINUOUS => null
     ];
 
