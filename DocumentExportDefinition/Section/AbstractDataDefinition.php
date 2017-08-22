@@ -14,7 +14,7 @@ use JMS\Serializer\Annotation as Serializer;
  *    "Html": "DocumentExportDefinition\Section\Html\HtmlDefinition",
  *    "HtmlImage": "DocumentExportDefinition\Section\Html\HtmlImageDefinition",
  *    "TOC": "DocumentExportDefinition\Section\Data\TOCDefinition",
- *    "TOCAT": "DocumentExportDefinition\Section\Data\TOCATDefinition"
+ *    "WordTOC": "DocumentExportDefinition\Section\Data\WordTOCDefinition"
  * })
  */
 abstract class AbstractDataDefinition
