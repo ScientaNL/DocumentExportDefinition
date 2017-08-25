@@ -33,10 +33,20 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	 */
 	protected $value;
 
+	/**
+	 * @Serializer\SerializedName("title")
+	 * @Serializer\Type("string")
+	 * @var string
+	 */
+	protected $title;
+
 
 	public function __construct($title = null, $value = null)
 	{
-		parent::__construct($title, $value);
+		parent::__construct();
+		parent::setValue($value);
+
+		$this->title = $title;
 		$this->fileId = uniqid($this->getType());
 	}
 

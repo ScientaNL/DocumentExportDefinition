@@ -26,7 +26,14 @@ abstract class AbstractDataDefinition
      */
     protected $value;
 
-    /**
+	/**
+	 * AbstractDataDefinition constructor.
+	 */
+	public function __construct()
+	{
+	}
+
+	/**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("objectType")
      * @Serializer\Type("string")
