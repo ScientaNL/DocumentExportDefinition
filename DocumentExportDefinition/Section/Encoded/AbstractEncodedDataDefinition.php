@@ -102,4 +102,12 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	{
 		return $this->fileId;
 	}
+
+	/**
+	 * @return string
+	 */
+	public function getTitle()
+	{
+		return $this->title;
+	}
 }
