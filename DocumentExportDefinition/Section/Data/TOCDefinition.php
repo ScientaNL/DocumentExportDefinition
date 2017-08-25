@@ -14,13 +14,6 @@ class TOCDefinition extends AbstractDataDefinition
     protected $value;
 
     /**
-     * @Serializer\SerializedName("title")
-     * @Serializer\Type("string")
-     * @var string
-     */
-    protected $title;
-
-    /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("objectType")
      * @Serializer\Type("string")
@@ -30,22 +23,6 @@ class TOCDefinition extends AbstractDataDefinition
 	{
 		return 'TOCDefinition';
 	}
-
-	/**
-	 * @param string $title
-	 */
-	public function setTitle($title)
-	{
-		$this->title = $title;
-	}
-
-    /**
-     * @return string
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
 
 	/**
 	 * @param array $value

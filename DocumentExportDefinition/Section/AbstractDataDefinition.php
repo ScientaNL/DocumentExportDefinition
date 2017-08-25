@@ -27,6 +27,13 @@ abstract class AbstractDataDefinition
     protected $value;
 
 	/**
+	 * @Serializer\SerializedName("title")
+	 * @Serializer\Type("string")
+	 * @var string
+	 */
+	protected $title;
+
+	/**
 	 * AbstractDataDefinition constructor.
 	 */
 	public function __construct()
@@ -55,5 +62,21 @@ abstract class AbstractDataDefinition
 	public function setValue($value)
 	{
 		$this->value = $value;
+	}
+
+	/**
+	 * @param string $title
+	 */
+	public function setTitle($title)
+	{
+		$this->title = $title;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTitle()
+	{
+		return $this->title;
 	}
 }
