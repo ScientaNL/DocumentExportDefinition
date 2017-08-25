@@ -31,6 +31,14 @@ class TOCDefinition extends AbstractDataDefinition
 		return 'TOCDefinition';
 	}
 
+	/**
+	 * @param string $title
+	 */
+	public function setTitle($title)
+	{
+		$this->title = $title;
+	}
+
     /**
      * @return string
      */
@@ -38,4 +46,12 @@ class TOCDefinition extends AbstractDataDefinition
     {
         return $this->title;
     }
+
+	/**
+	 * @param array $value
+	 */
+	public function setValue($value)
+	{
+		$this->value = $value;
+	}
 }
