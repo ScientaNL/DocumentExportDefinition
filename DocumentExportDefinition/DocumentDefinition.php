@@ -78,6 +78,14 @@ class DocumentDefinition
         self::PROPERTY_LOCALE => null
     ];
 
+	/**
+	 * @param SectionDefinition $section
+	 */
+	public function setHeader(SectionDefinition $section)
+	{
+		$this->header = $section;
+	}
+
     /**
      * @return SectionDefinition
      */
@@ -86,7 +94,15 @@ class DocumentDefinition
         return $this->header;
     }
 
-    /**
+	/**
+	 * @param SectionDefinition $section
+	 */
+	public function setFooter(SectionDefinition $section)
+	{
+		$this->footer = $section;
+	}
+
+	/**
      * @return SectionDefinition
      */
     public function getFooter()
@@ -133,7 +149,11 @@ class DocumentDefinition
         return $this->sections;
     }
 
-    public function setOption($option, $value)
+	/**
+	 * @param $option
+	 * @param $value
+	 */
+	public function setOption($option, $value)
     {
         if (array_key_exists($option, $this->options) === false) {
             throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
@@ -142,7 +162,11 @@ class DocumentDefinition
         $this->options[$option] = $value;
     }
 
-    public function getOption($option)
+	/**
+	 * @param $option
+	 * @return mixed
+	 */
+	public function getOption($option)
     {
         if (array_key_exists($option, $this->options) === false) {
             throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
@@ -151,7 +175,11 @@ class DocumentDefinition
         return $this->options[$option];
     }
 
-    public function setDocumentProperty($property, $value)
+	/**
+	 * @param $property
+	 * @param $value
+	 */
+	public function setDocumentProperty($property, $value)
     {
         if (array_key_exists($property, $this->documentProperties) === false) {
             throw new InvalidArgumentException(sprintf("Invalid property %s specified", $property));
@@ -160,7 +188,11 @@ class DocumentDefinition
         $this->documentProperties[$property] = $value;
     }
 
-    public function getDocumentProperty($property)
+	/**
+	 * @param $property
+	 * @return mixed
+	 */
+	public function getDocumentProperty($property)
     {
         if (array_key_exists($property, $this->documentProperties) === false) {
             throw new InvalidArgumentException(sprintf("Invalid option %s specified", $property));
@@ -169,12 +201,18 @@ class DocumentDefinition
         return $this->documentProperties[$property];
     }
 
-    public function setTemplateDocx($templateFile)
+	/**
+	 * @param $templateFile
+	 */
+	public function setTemplateDocx($templateFile)
     {
         $this->templateDocx = $templateFile;
     }
 
-    public function getTemplateDocx()
+	/**
+	 * @return mixed
+	 */
+	public function getTemplateDocx()
     {
         return $this->templateDocx;
     }
