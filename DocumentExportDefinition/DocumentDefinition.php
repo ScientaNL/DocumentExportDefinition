@@ -19,6 +19,7 @@ class DocumentDefinition
 
     const OPTION_BASE_URL = 'baseUrl';
     const OPTION_MERGE_CONTINUOUS = 'mergeContinuous';
+    const OPTION_TEMPLATE_VAR_SYMBOL = 'templateVarSymbol';
 
     const LANDSCAPE = 'landscape';
     const PORTRAIT = 'portrait';
@@ -58,7 +59,8 @@ class DocumentDefinition
      */
     protected $options = [
         self::OPTION_BASE_URL => null,
-        self::OPTION_MERGE_CONTINUOUS => null
+        self::OPTION_MERGE_CONTINUOUS => null,
+        self::OPTION_TEMPLATE_VAR_SYMBOL => '$'
     ];
 
     /**
