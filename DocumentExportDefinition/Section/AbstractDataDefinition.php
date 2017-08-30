@@ -13,6 +13,9 @@ use JMS\Serializer\Annotation as Serializer;
  *    "Image": "DocumentExportDefinition\Section\Encoded\ImageDefinition",
  *    "Html": "DocumentExportDefinition\Section\Html\HtmlDefinition",
  *    "HtmlImage": "DocumentExportDefinition\Section\Html\HtmlImageDefinition",
+ *    "RASCI": "DocumentExportDefinition\Section\Data\RASCIDefinition",
+ *    "CategoryTrail": "DocumentExportDefinition\Section\Data\CategoryTrailDefinition",
+ *    "Tag": "DocumentExportDefinition\Section\Data\TagDefinition",
  *    "TOC": "DocumentExportDefinition\Section\Data\TOCDefinition",
  *    "WordTOC": "DocumentExportDefinition\Section\Data\WordTOCDefinition"
  * })
@@ -58,6 +61,7 @@ abstract class AbstractDataDefinition
 
 	/**
 	 * @param string $value
+	 * @return $this
 	 */
 	public function setValue($value)
 	{
@@ -67,6 +71,7 @@ abstract class AbstractDataDefinition
 
 	/**
 	 * @param string $title
+	 * @return $this
 	 */
 	public function setTitle($title)
 	{
