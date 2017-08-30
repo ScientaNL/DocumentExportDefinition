@@ -62,6 +62,7 @@ abstract class AbstractDataDefinition
 	public function setValue($value)
 	{
 		$this->value = $value;
+		return $this;
 	}
 
 	/**
@@ -70,6 +71,7 @@ abstract class AbstractDataDefinition
 	public function setTitle($title)
 	{
 		$this->title = $title;
+		return $this;
 	}
 
 	/**
