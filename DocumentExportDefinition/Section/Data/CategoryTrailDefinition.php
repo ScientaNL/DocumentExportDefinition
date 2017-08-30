@@ -25,7 +25,7 @@ class CategoryTrailDefinition extends AbstractDataDefinition
 	}
 
 	/**
-	 * @param string $value
+	 * @param array $value
 	 */
 	public function setValue($value)
 	{
