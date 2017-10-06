@@ -25,7 +25,8 @@ class RASCIDefinition extends AbstractDataDefinition
 	}
 
 	/**
-	 * @param string $value
+	 * @param array $value
+	 * @return $this
 	 */
 	public function setValue($value)
 	{
