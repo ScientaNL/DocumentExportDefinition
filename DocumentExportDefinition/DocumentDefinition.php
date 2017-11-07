@@ -199,7 +199,7 @@ class DocumentDefinition
 	public function getDocumentProperty($property)
     {
         if (array_key_exists($property, $this->documentProperties) === false) {
-            throw new InvalidArgumentException(sprintf("Invalid option %s specified", $property));
+            throw new InvalidArgumentException(sprintf("Invalid property %s specified", $property));
         }
 
         return $this->documentProperties[$property];
