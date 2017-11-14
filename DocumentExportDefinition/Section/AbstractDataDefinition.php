@@ -38,13 +38,6 @@ abstract class AbstractDataDefinition
 	protected $title;
 
 	/**
-	 * @Serializer\SerializedName("categoryTrail")
-	 * @Serializer\Type("array")
-	 * @var array
-	 */
-	protected $categoryTrail;
-
-	/**
 	 * AbstractDataDefinition constructor.
 	 */
 	public function __construct()
@@ -92,24 +85,6 @@ abstract class AbstractDataDefinition
 	public function setTitle($title)
 	{
 		$this->title = $title;
-		return $this;
-	}
-
-	/**
-	 * @return array
-	 */
-	public function getCategoryTrail(): array
-	{
-		return $this->categoryTrail;
-	}
-
-	/**
-	 * @param array $categoryTrail
-	 * @return AbstractDataDefinition
-	 */
-	public function setCategoryTrail(array $categoryTrail)
-	{
-		$this->categoryTrail = $categoryTrail;
 		return $this;
 	}
 }
