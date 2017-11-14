@@ -56,6 +56,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	public function setEncodedValue($value)
 	{
 		$this->value = base64_decode($value);
+		return $this;
 	}
 
 	/**
@@ -72,6 +73,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	public function setMimeType($mimeType)
 	{
 		$this->mimeType = $mimeType;
+		return $this;
 	}
 
 	/**
@@ -80,6 +82,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	public function setExtension($extension)
 	{
 		$this->extension = $extension;
+		return $this;
 	}
 
 	public function getExtension()
