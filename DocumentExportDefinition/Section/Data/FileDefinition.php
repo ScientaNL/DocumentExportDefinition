@@ -73,4 +73,44 @@ class FileDefinition extends AbstractDataDefinition
         return $this->description;
     }
 
+	/**
+	 * @param mixed $fileSize
+	 * @return FileDefinition
+	 */
+	public function setFileSize($fileSize)
+	{
+		$this->fileSize = $fileSize;
+		return $this;
+	}
+
+	/**
+	 * @param mixed $fileName
+	 * @return FileDefinition
+	 */
+	public function setFileName($fileName)
+	{
+		$this->fileName = $fileName;
+		return $this;
+	}
+
+	/**
+	 * @param mixed $fileType
+	 * @return FileDefinition
+	 */
+	public function setFileType($fileType)
+	{
+		$this->fileType = $fileType;
+		return $this;
+	}
+
+	/**
+	 * @param mixed $description
+	 * @return FileDefinition
+	 */
+	public function setDescription($description)
+	{
+		$this->description = $description;
+		return $this;
+	}
+
 }
