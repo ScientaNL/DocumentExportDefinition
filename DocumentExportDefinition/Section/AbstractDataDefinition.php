@@ -1,4 +1,5 @@
 <?php
+
 namespace DocumentExportDefinition\Section;
 
 use JMS\Serializer\Annotation as Serializer;
@@ -6,7 +7,6 @@ use JMS\Serializer\Annotation as Serializer;
 /**
  * @Serializer\Discriminator(field = "objectType", map = {
  *    "String": "DocumentExportDefinition\Section\Data\StringDefinition",
- *    "PageNumber": "DocumentExportDefinition\Section\Data\PageNumberDefinition",
  *    "File": "DocumentExportDefinition\Section\Data\FileDefinition",
  *    "Docx": "DocumentExportDefinition\Section\Encoded\DocxDefinition",
  *    "Flowchart": "DocumentExportDefinition\Section\Encoded\FlowchartDefinition",
@@ -15,6 +15,7 @@ use JMS\Serializer\Annotation as Serializer;
  *    "HtmlImage": "DocumentExportDefinition\Section\Html\HtmlImageDefinition",
  *    "RASCI": "DocumentExportDefinition\Section\Data\RASCIDefinition",
  *    "CategoryTrail": "DocumentExportDefinition\Section\Data\CategoryTrailDefinition",
+ *    "BadgeCategoryTrail": "DocumentExportDefinition\Section\Data\BadgeCategoryTrailDefinition",
  *    "Tag": "DocumentExportDefinition\Section\Data\TagDefinition",
  *    "TOC": "DocumentExportDefinition\Section\Data\TOCDefinition",
  *    "WordTOC": "DocumentExportDefinition\Section\Data\WordTOCDefinition"
@@ -22,12 +23,12 @@ use JMS\Serializer\Annotation as Serializer;
  */
 abstract class AbstractDataDefinition
 {
-    /**
-     * @Serializer\SerializedName("value")
-     * @Serializer\Type("string")
-     * @var string
-     */
-    protected $value;
+	/**
+	 * @Serializer\SerializedName("value")
+	 * @Serializer\Type("string")
+	 * @var string
+	 */
+	protected $value;
 
 	/**
 	 * @Serializer\SerializedName("title")
@@ -37,6 +38,13 @@ abstract class AbstractDataDefinition
 	protected $title;
 
 	/**
+	 * @Serializer\SerializedName("categoryTrail")
+	 * @Serializer\Type("array")
+	 * @var array
+	 */
+	protected $categoryTrail;
+
+	/**
 	 * AbstractDataDefinition constructor.
 	 */
 	public function __construct()
@@ -44,20 +52,20 @@ abstract class AbstractDataDefinition
 	}
 
 	/**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("objectType")
-     * @Serializer\Type("string")
-     * @return string
-     */
-    abstract public function getType();
+	 * @Serializer\VirtualProperty
+	 * @Serializer\SerializedName("objectType")
+	 * @Serializer\Type("string")
+	 * @return string
+	 */
+	abstract public function getType();
 
-    /**
-     * @return string|array
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
+	/**
+	 * @return string|array
+	 */
+	public function getValue()
+	{
+		return $this->value;
+	}
 
 	/**
 	 * @param string $value
@@ -67,6 +75,14 @@ abstract class AbstractDataDefinition
 	{
 		$this->value = $value;
 		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTitle()
+	{
+		return $this->title;
 	}
 
 	/**
@@ -80,10 +96,20 @@ abstract class AbstractDataDefinition
 	}
 
 	/**
-	 * @return string
+	 * @return array
 	 */
-	public function getTitle()
+	public function getCategoryTrail(): array
 	{
-		return $this->title;
+		return $this->categoryTrail;
+	}
+
+	/**
+	 * @param array $categoryTrail
+	 * @return AbstractDataDefinition
+	 */
+	public function setCategoryTrail(array $categoryTrail)
+	{
+		$this->categoryTrail = $categoryTrail;
+		return $this;
 	}
 }
