@@ -1,10 +1,10 @@
 <?php
 namespace DocumentExportDefinition\Section\Data;
 
-use DocumentExportDefinition\Section\AbstractDataDefinition;
+use DocumentExportDefinition\Section\Encoded\AbstractEncodedDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-class FileDefinition extends AbstractDataDefinition
+class FileDefinition extends AbstractEncodedDataDefinition
 {
     /**
      * @Serializer\SerializedName("fileSize")
