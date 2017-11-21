@@ -134,7 +134,7 @@ class SectionDefinition
 	/**
 	 * @return array
 	 */
-	public function getCategoryTrail(): array
+	public function getCategoryTrail()
 	{
 		return $this->categoryTrail;
 	}
