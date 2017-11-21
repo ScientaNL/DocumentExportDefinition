@@ -30,6 +30,12 @@ class FileDefinition extends AbstractEncodedDataDefinition
      */
     protected $description;
 
+	/**
+	 * @Serializer\SerializedName("url")
+	 * @Serializer\Type("string")
+	 */
+	protected $url;
+
     /**
      * @Serializer\VirtualProperty
      * @Serializer\SerializedName("objectType")
@@ -111,6 +117,24 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	{
 		$this->description = $description;
 		return $this;
+	}
+
+	/**
+	 * @param mixed $url
+	 * @return FileDefinition
+	 */
+	public function setUrl($url)
+	{
+		$this->url = $url;
+		return $this;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getUrl()
+	{
+		return $this->url;
 	}
 
 }
