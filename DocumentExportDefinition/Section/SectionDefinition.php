@@ -63,6 +63,7 @@ class SectionDefinition
 	public function setTitle($title)
 	{
 		$this->title = $title;
+		return $this;
 	}
 
 	/**
@@ -79,6 +80,7 @@ class SectionDefinition
 	public function setVariables($variables)
 	{
 		$this->variables = $variables;
+		return $this;
 	}
 
 	/**
@@ -96,6 +98,7 @@ class SectionDefinition
 	public function setOption($option, $value)
 	{
 		$this->options[$option] = $value;
+		return $this;
 	}
 
 	/**
@@ -125,6 +128,7 @@ class SectionDefinition
 	public function setImages($images)
 	{
 		$this->images = $images;
+		return $this;
 	}
 
 	/**
