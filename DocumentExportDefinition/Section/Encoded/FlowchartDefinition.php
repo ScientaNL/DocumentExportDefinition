@@ -16,6 +16,12 @@ class FlowchartDefinition extends AbstractEncodedDataDefinition
 	 */
 	protected $height;
 
+    /**
+     * @Serializer\VirtualProperty
+     * @Serializer\SerializedName("objectType")
+     * @Serializer\Type("string")
+     * @return string
+     */
 	public function getType()
 	{
 		return 'FlowchartDefinition';
@@ -27,6 +33,7 @@ class FlowchartDefinition extends AbstractEncodedDataDefinition
 	public function setWidth($width)
 	{
 		$this->width = $width;
+		return $this;
 	}
 
 	/**
@@ -43,6 +50,7 @@ class FlowchartDefinition extends AbstractEncodedDataDefinition
 	public function setHeight($height)
 	{
 		$this->height = $height;
+		return $this;
 	}
 
 	/**
