@@ -88,6 +88,7 @@ class DocumentDefinition
 	public function setHeader(SectionDefinition $section)
 	{
 		$this->header = $section;
+		return $this;
 	}
 
     /**
@@ -104,6 +105,7 @@ class DocumentDefinition
 	public function setFooter(SectionDefinition $section)
 	{
 		$this->footer = $section;
+		return $this;
 	}
 
 	/**
@@ -120,6 +122,7 @@ class DocumentDefinition
     public function prependSection(SectionDefinition $section)
     {
         array_unshift($this->sections, $section);
+		return $this;
     }
 
     /**
@@ -128,6 +131,7 @@ class DocumentDefinition
     public function addSection(SectionDefinition $section)
     {
         $this->sections[] = $section;
+		return $this;
     }
 
     /**
@@ -164,6 +168,7 @@ class DocumentDefinition
         }
 
         $this->options[$option] = $value;
+		return $this;
     }
 
 	/**
@@ -190,6 +195,7 @@ class DocumentDefinition
         }
 
         $this->documentProperties[$property] = $value;
+		return $this;
     }
 
 	/**
@@ -211,6 +217,7 @@ class DocumentDefinition
 	public function setTemplateDocx($templateFile)
     {
         $this->templateDocx = $templateFile;
+		return $this;
     }
 
 	/**
@@ -227,6 +234,7 @@ class DocumentDefinition
     public function setEncodedTemplate($templateFile)
     {
         $this->templateDocx = base64_decode($templateFile);
+		return $this;
     }
 
     /**

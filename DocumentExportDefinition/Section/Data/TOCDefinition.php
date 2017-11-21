@@ -30,5 +30,6 @@ class TOCDefinition extends AbstractDataDefinition
 	public function setValue($value)
 	{
 		$this->value = $value;
+		return $this;
 	}
 }

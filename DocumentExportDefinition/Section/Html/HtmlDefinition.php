@@ -36,6 +36,7 @@ class HtmlDefinition extends AbstractDataDefinition
 	public function addImage(HtmlImageDefinition $image)
 	{
 		$this->images[$image->getFileId()] = $image;
+		return $this;
 	}
 
 	/**
@@ -52,6 +53,7 @@ class HtmlDefinition extends AbstractDataDefinition
     public function setUseStrictStyles($useStrictStyles)
 	{
 		$this->useStrictStyles = $useStrictStyles;
+		return $this;
 	}
 
     /**
