@@ -2,8 +2,6 @@
 
 namespace DocumentExportDefinition\Section;
 
-use DocumentExportDefinition\DocumentDefinition;
-use InvalidArgumentException;
 use JMS\Serializer\Annotation as Serializer;
 
 class SectionDefinition
@@ -59,6 +57,7 @@ class SectionDefinition
 
 	/**
 	 * @param string $title
+	 * @return $this
 	 */
 	public function setTitle($title)
 	{
@@ -76,6 +75,7 @@ class SectionDefinition
 
 	/**
 	 * @param $variables
+	 * @return $this
 	 */
 	public function setVariables($variables)
 	{
@@ -94,6 +94,7 @@ class SectionDefinition
 	/**
 	 * @param $option
 	 * @param $value
+	 * @return $this
 	 */
 	public function setOption($option, $value)
 	{
@@ -124,6 +125,7 @@ class SectionDefinition
 
 	/**
 	 * @param mixed $images
+	 * @return $this
 	 */
 	public function setImages($images)
 	{

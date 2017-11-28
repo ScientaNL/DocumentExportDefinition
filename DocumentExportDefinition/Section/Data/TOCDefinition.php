@@ -26,6 +26,7 @@ class TOCDefinition extends AbstractDataDefinition
 
 	/**
 	 * @param array $value
+	 * @return $this
 	 */
 	public function setValue($value)
 	{

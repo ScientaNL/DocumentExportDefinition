@@ -1,4 +1,5 @@
 <?php
+
 namespace DocumentExportDefinition\Section\Data;
 
 use DocumentExportDefinition\Section\AbstractDataDefinition;
@@ -13,19 +14,20 @@ class BadgeCategoryTrailDefinition extends AbstractDataDefinition
 	 */
 	protected $value;
 
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("objectType")
-     * @Serializer\Type("string")
-     * @return string
-     */
-    public function getType()
+	/**
+	 * @Serializer\VirtualProperty
+	 * @Serializer\SerializedName("objectType")
+	 * @Serializer\Type("string")
+	 * @return string
+	 */
+	public function getType()
 	{
 		return 'BadgeCategoryTrailDefinition';
 	}
 
 	/**
 	 * @param array $value
+	 * @return $this
 	 */
 	public function setValue($value)
 	{
@@ -36,7 +38,7 @@ class BadgeCategoryTrailDefinition extends AbstractDataDefinition
 	/**
 	 * @return array
 	 */
-	public function getValue() : array
+	public function getValue(): array
 	{
 		return $this->value;
 	}

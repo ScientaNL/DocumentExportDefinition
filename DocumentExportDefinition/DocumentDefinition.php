@@ -86,6 +86,7 @@ class DocumentDefinition
 
 	/**
 	 * @param SectionDefinition $section
+	 * @return $this
 	 */
 	public function setHeader(SectionDefinition $section)
 	{
@@ -103,6 +104,7 @@ class DocumentDefinition
 
 	/**
 	 * @param SectionDefinition $section
+	 * @return $this
 	 */
 	public function setFooter(SectionDefinition $section)
 	{
@@ -118,18 +120,20 @@ class DocumentDefinition
         return $this->footer;
     }
 
-    /**
-     * @param SectionDefinition $section
-     */
+	/**
+	 * @param SectionDefinition $section
+	 * @return $this
+	 */
     public function prependSection(SectionDefinition $section)
     {
         array_unshift($this->sections, $section);
 		return $this;
     }
 
-    /**
-     * @param SectionDefinition $section
-     */
+	/**
+	 * @param SectionDefinition $section
+	 * @return $this
+	 */
     public function addSection(SectionDefinition $section)
     {
         $this->sections[] = $section;
@@ -162,6 +166,7 @@ class DocumentDefinition
 	/**
 	 * @param $option
 	 * @param $value
+	 * @return $this
 	 */
 	public function setOption($option, $value)
     {
@@ -189,6 +194,7 @@ class DocumentDefinition
 	/**
 	 * @param $property
 	 * @param $value
+	 * @return $this
 	 */
 	public function setDocumentProperty($property, $value)
     {
@@ -215,6 +221,7 @@ class DocumentDefinition
 
 	/**
 	 * @param $templateFile
+	 * @return $this
 	 */
 	public function setTemplateDocx($templateFile)
     {
@@ -230,9 +237,10 @@ class DocumentDefinition
         return $this->templateDocx;
     }
 
-    /**
-     * @param $templateFile
-     */
+	/**
+	 * @param $templateFile
+	 * @return $this
+	 */
     public function setEncodedTemplate($templateFile)
     {
         $this->templateDocx = base64_decode($templateFile);

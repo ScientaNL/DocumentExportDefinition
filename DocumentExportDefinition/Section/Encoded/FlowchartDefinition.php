@@ -29,6 +29,7 @@ class FlowchartDefinition extends AbstractEncodedDataDefinition
 
 	/**
 	 * @param int $width
+	 * @return $this
 	 */
 	public function setWidth($width)
 	{
@@ -46,6 +47,7 @@ class FlowchartDefinition extends AbstractEncodedDataDefinition
 
 	/**
 	 * @param int $height
+	 * @return $this
 	 */
 	public function setHeight($height)
 	{

@@ -1,4 +1,5 @@
 <?php
+
 namespace DocumentExportDefinition\Section\Data;
 
 use DocumentExportDefinition\Section\Encoded\AbstractEncodedDataDefinition;
@@ -6,29 +7,29 @@ use JMS\Serializer\Annotation as Serializer;
 
 class FileDefinition extends AbstractEncodedDataDefinition
 {
-    /**
-     * @Serializer\SerializedName("fileSize")
-     * @Serializer\Type("string")
-     */
-    protected $fileSize;
+	/**
+	 * @Serializer\SerializedName("fileSize")
+	 * @Serializer\Type("string")
+	 */
+	protected $fileSize;
 
-    /**
-     * @Serializer\SerializedName("fileName")
-     * @Serializer\Type("string")
-     */
-    protected $fileName;
+	/**
+	 * @Serializer\SerializedName("fileName")
+	 * @Serializer\Type("string")
+	 */
+	protected $fileName;
 
-    /**
-     * @Serializer\SerializedName("fileType")
-     * @Serializer\Type("string")
-     */
-    protected $fileType;
+	/**
+	 * @Serializer\SerializedName("fileType")
+	 * @Serializer\Type("string")
+	 */
+	protected $fileType;
 
-    /**
-     * @Serializer\SerializedName("description")
-     * @Serializer\Type("string")
-     */
-    protected $description;
+	/**
+	 * @Serializer\SerializedName("description")
+	 * @Serializer\Type("string")
+	 */
+	protected $description;
 
 	/**
 	 * @Serializer\SerializedName("url")
@@ -36,48 +37,48 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	 */
 	protected $url;
 
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("objectType")
-     * @Serializer\Type("string")
-     * @return string
-     */
-    public function getType()
+	/**
+	 * @Serializer\VirtualProperty
+	 * @Serializer\SerializedName("objectType")
+	 * @Serializer\Type("string")
+	 * @return string
+	 */
+	public function getType()
 	{
 		return 'FileDefinition';
 	}
 
-    /**
-     * @return mixed
-     */
-    public function getFilesize()
-    {
-        return $this->fileSize;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getFileSize()
+	{
+		return $this->fileSize;
+	}
 
-    /**
-     * @return mixed
-     */
-    public function getFileName()
-    {
-        return $this->fileName;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getFileName(): string
+	{
+		return $this->fileName;
+	}
 
-    /**
-     * @return mixed
-     */
-    public function getFileType()
-    {
-        return $this->fileType;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getFileType(): string
+	{
+		return $this->fileType;
+	}
 
-    /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
+	/**
+	 * @return mixed
+	 */
+	public function getDescription(): string
+	{
+		return $this->description;
+	}
 
 	/**
 	 * @param mixed $fileSize
@@ -132,7 +133,7 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	/**
 	 * @return mixed
 	 */
-	public function getUrl()
+	public function getUrl(): string
 	{
 		return $this->url;
 	}

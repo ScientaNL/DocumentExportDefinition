@@ -52,6 +52,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 
 	/**
 	 * @param $value
+	 * @return $this
 	 */
 	public function setEncodedValue($value)
 	{
@@ -69,6 +70,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 
 	/**
 	 * @param int $mimeType
+	 * @return $this
 	 */
 	public function setMimeType($mimeType)
 	{
@@ -78,6 +80,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 
 	/**
 	 * @param int $extension
+	 * @return $this
 	 */
 	public function setExtension($extension)
 	{
