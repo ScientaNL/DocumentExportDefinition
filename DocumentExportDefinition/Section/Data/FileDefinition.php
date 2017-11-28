@@ -61,7 +61,7 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	 */
 	public function getFileName(): string
 	{
-		return $this->fileName;
+		return (string)$this->fileName;
 	}
 
 	/**
@@ -69,7 +69,7 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	 */
 	public function getFileType(): string
 	{
-		return $this->fileType;
+		return (string)$this->fileType;
 	}
 
 	/**
@@ -77,7 +77,7 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	 */
 	public function getDescription(): string
 	{
-		return $this->description;
+		return (string)$this->description;
 	}
 
 	/**
