@@ -16,6 +16,9 @@ class DocumentDefinition
     const PROPERTY_COMPANY = "company";
     const PROPERTY_DATE = 'date';
     const PROPERTY_LOCALE = "locale";
+	const PROPERTY_LOCALIZED_SIZE = 'localizedSize';
+	const PROPERTY_LOCALIZED_DESCRIPTION = 'localizedDescription';
+	const PROPERTY_LOCALIZED_TYPE = 'localizedType';
 
     const OPTION_BASE_URL = 'baseUrl';
 	const OPTION_CONVERSION_TYPE = 'conversionType';
@@ -81,7 +84,10 @@ class DocumentDefinition
         self::PROPERTY_CONTENT_STATUS => null,
         self::PROPERTY_COMPANY => null,
         self::PROPERTY_DATE => null,
-        self::PROPERTY_LOCALE => null
+        self::PROPERTY_LOCALE => null,
+        self::PROPERTY_LOCALIZED_SIZE => null,
+        self::PROPERTY_LOCALIZED_DESCRIPTION => null,
+        self::PROPERTY_LOCALIZED_TYPE => null,
     ];
 
 	/**
