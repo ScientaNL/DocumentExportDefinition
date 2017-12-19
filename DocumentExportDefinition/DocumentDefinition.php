@@ -67,7 +67,7 @@ class DocumentDefinition
         self::OPTION_CONVERSION_TYPE => null,
         self::OPTION_CATEGORIES_AS_FOLDERS => null,
         self::OPTION_MERGE_CONTINUOUS => null,
-        self::OPTION_TEMPLATE_VAR_SYMBOL => '$'
+        self::OPTION_TEMPLATE_VAR_SYMBOL => '$VAR$'
     ];
 
     /**
