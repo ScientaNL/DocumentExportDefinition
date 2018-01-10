@@ -171,16 +171,6 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param $options
-	 */
-	public function setOptions($options)
-	{
-		foreach ($options as $name => $option) {
-			$this->setOption($name, $option);
-		}
-	}
-
-	/**
 	 * @param $option
 	 * @param $value
 	 * @return $this
@@ -206,16 +196,6 @@ class DocumentDefinition
 		}
 
 		return $this->options[$option];
-	}
-
-	/**
-	 * @param $properties
-	 */
-	public function setDocumentProperties($properties)
-	{
-		foreach ($properties as $name => $property) {
-			$this->setDocumentProperty($name, $property);
-		}
 	}
 
 	/**
