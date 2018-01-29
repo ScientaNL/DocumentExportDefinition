@@ -7,7 +7,6 @@ use JMS\Serializer\Annotation as Serializer;
 class SectionDefinition
 {
 	const OPTION_ANCHOR = 'anchor';
-	const OPTION_USE_STRICT_STYLES = 'useStrictStyles';
 	const OPTION_ORIENTATION = 'orientation';
 	const OPTION_NEXT_SECTION_ORIENTATION = 'nextSectionOrientation';
 
@@ -32,7 +31,6 @@ class SectionDefinition
 	 */
 	protected $options = [
 		self::OPTION_ANCHOR => null,
-		self::OPTION_USE_STRICT_STYLES => null,
 		self::OPTION_ORIENTATION => null,
 		self::OPTION_NEXT_SECTION_ORIENTATION => null
 	];
