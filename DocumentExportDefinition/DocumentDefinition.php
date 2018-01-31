@@ -17,9 +17,16 @@ class DocumentDefinition
 	const PROPERTY_COMPANY = "company";
 	const PROPERTY_DATE = 'date';
 	const PROPERTY_LOCALE = "locale";
+
 	const PROPERTY_LOCALIZED_SIZE = 'localizedSize';
 	const PROPERTY_LOCALIZED_DESCRIPTION = 'localizedDescription';
 	const PROPERTY_LOCALIZED_TYPE = 'localizedType';
+
+	const PROPERTY_LOCALIZED_RASCI_RESPONSIBLE = 'responsible';
+	const PROPERTY_LOCALIZED_RASCI_ACCOUNTABLE = 'accountable';
+	const PROPERTY_LOCALIZED_RASCI_SUPPORT = 'support';
+	const PROPERTY_LOCALIZED_RASCI_CONSULT = 'consult';
+	const PROPERTY_LOCALIZED_RASCI_INFORM = 'inform';
 
 	const OPTION_BASE_URL = 'baseUrl';
 	const OPTION_CONVERSION_TYPE = 'conversionType';
