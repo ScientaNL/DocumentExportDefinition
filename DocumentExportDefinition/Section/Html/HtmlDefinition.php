@@ -1,10 +1,10 @@
 <?php
 namespace DocumentExportDefinition\Section\Html;
 
-use DocumentExportDefinition\Section\AbstractSectionDefinition;
+use DocumentExportDefinition\Section\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-class HtmlDefinition extends AbstractSectionDefinition
+class HtmlDefinition extends AbstractDataDefinition
 {
 	/**
 	 * @Serializer\SerializedName("images")
@@ -19,6 +19,12 @@ class HtmlDefinition extends AbstractSectionDefinition
 	 */
 	protected $useStrictStyles = true;
 
+    /**
+     * @Serializer\VirtualProperty
+     * @Serializer\SerializedName("objectType")
+     * @Serializer\Type("string")
+     * @return string
+     */
 	public function getType()
 	{
 		return 'HtmlDefinition';
@@ -26,10 +32,12 @@ class HtmlDefinition extends AbstractSectionDefinition
 
 	/**
 	 * @param HtmlImageDefinition $image
+	 * @return $this
 	 */
 	public function addImage(HtmlImageDefinition $image)
 	{
 		$this->images[$image->getFileId()] = $image;
+		return $this;
 	}
 
 	/**
@@ -40,12 +48,20 @@ class HtmlDefinition extends AbstractSectionDefinition
 		return $this->images;
 	}
 
-	public function setUseStrictStyles($useStrictStyles)
+	/**
+	 * @param $useStrictStyles
+	 * @return $this
+	 */
+    public function setUseStrictStyles($useStrictStyles)
 	{
 		$this->useStrictStyles = $useStrictStyles;
+		return $this;
 	}
 
-	public function getUseStrictStyles()
+    /**
+     * @return bool
+     */
+    public function getUseStrictStyles()
 	{
 		return $this->useStrictStyles;
 	}

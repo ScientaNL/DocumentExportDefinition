@@ -4,14 +4,14 @@ namespace DocumentExportDefinition\Section\Data;
 use DocumentExportDefinition\Section\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-class TOCDefinition extends AbstractDataDefinition
+class WordTOCDefinition extends AbstractDataDefinition
 {
     /**
-     * @Serializer\SerializedName("value")
-     * @Serializer\Type("array")
-     * @var array
+     * @Serializer\SerializedName("title")
+     * @Serializer\Type("string")
+     * @var string
      */
-    protected $value;
+    protected $title;
 
     /**
      * @Serializer\VirtualProperty
@@ -24,13 +24,11 @@ class TOCDefinition extends AbstractDataDefinition
 		return 'TOCDefinition';
 	}
 
-	/**
-	 * @param array $value
-	 * @return $this
-	 */
-	public function setValue($value)
-	{
-		$this->value = $value;
-		return $this;
-	}
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 }

@@ -1,10 +1,10 @@
 <?php
 namespace DocumentExportDefinition\Section\Encoded;
 
-use DocumentExportDefinition\Section\AbstractSectionDefinition;
+use DocumentExportDefinition\Section\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
-abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
+abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 {
 	/**
 	 * @Serializer\SerializedName("fileId")
@@ -25,55 +25,67 @@ abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
 	protected $extension;
 
 	/**
-	 * @Serializer\SerializedName("contents")
+	 * @Serializer\SerializedName("value")
 	 * @Serializer\Type("string")
-	 * @Serializer\Accessor(getter="getEncodedContents",setter="setEncodedContents")
+	 * @Serializer\Accessor(getter="getEncodedValue",setter="setEncodedValue")
 	 *
 	 * @var string
 	 */
-	protected $contents;
+	protected $value;
 
 	/**
-	 * AbstractSectionDefinition constructor.
-	 * @param null $title
-	 * @param null $contents
+	 * @Serializer\SerializedName("title")
+	 * @Serializer\Type("string")
+	 * @var string
 	 */
-	public function __construct($title = null, $contents = null)
+	protected $title;
+
+
+	public function __construct($title = null, $value = null)
 	{
-		parent::__construct($title, $contents);
+		parent::__construct();
+		parent::setValue($value);
+
+		$this->title = $title;
 		$this->fileId = uniqid($this->getType());
 	}
 
 	/**
-	 * @param $contents
+	 * @param $value
+	 * @return $this
 	 */
-	public function setEncodedContents($contents)
+	public function setEncodedValue($value)
 	{
-		$this->contents = base64_decode($contents);
+		$this->value = base64_decode($value);
+		return $this;
 	}
 
 	/**
 	 * @return string
 	 */
-	public function getEncodedContents()
+	public function getEncodedValue()
 	{
-		return base64_encode($this->contents);
+		return base64_encode($this->value);
 	}
 
 	/**
 	 * @param int $mimeType
+	 * @return $this
 	 */
 	public function setMimeType($mimeType)
 	{
 		$this->mimeType = $mimeType;
+		return $this;
 	}
 
 	/**
 	 * @param int $extension
+	 * @return $this
 	 */
 	public function setExtension($extension)
 	{
 		$this->extension = $extension;
+		return $this;
 	}
 
 	public function getExtension()
@@ -95,5 +107,13 @@ abstract class AbstractEncodedDataDefinition extends AbstractSectionDefinition
 	public function getFileId()
 	{
 		return $this->fileId;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTitle()
+	{
+		return $this->title;
 	}
 }
