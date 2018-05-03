@@ -8,6 +8,7 @@ use JMS\Serializer\Annotation as Serializer;
  * @Serializer\Discriminator(field = "objectType", map = {
  *    "String": "DocumentExportDefinition\Section\Data\StringDefinition",
  *    "File": "DocumentExportDefinition\Section\Data\FileDefinition",
+ *    "Form": "DocumentExportDefinition\Section\Data\FormDefinition",
  *    "Docx": "DocumentExportDefinition\Section\Encoded\DocxDefinition",
  *    "Flowchart": "DocumentExportDefinition\Section\Encoded\FlowchartDefinition",
  *    "Image": "DocumentExportDefinition\Section\Encoded\ImageDefinition",
