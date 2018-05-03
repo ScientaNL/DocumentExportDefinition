@@ -1,17 +1,18 @@
 {
-    "name": "syslogic/document-export-definition",
-    "type": "library",
-    "description": "Document Export Definition for Syslogic Library and conversion servers",
-    "homepage": "http://www.syslogic.nl",
-    "license": "MIT",
-    "authors": [
-        {"name": "Syslogic", "email": "info@syslogic.nl"}
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.4.0"
-    },
+	"name": "syslogic/document-export-definition",
+	"type": "library",
+	"description": "Document Export Definition for Syslogic Library and conversion servers",
+	"homepage": "http://www.syslogic.nl",
+	"license": "MIT",
+	"authors": [
+		{"name": "Syslogic", "email": "info@syslogic.nl"}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.5.0",
+		"jms/serializer": "1.8.1"
+	},
 	"autoload": {
-        "psr-0": { "DocumentExportDefinition\\": "." }
-    }
+		"psr-0": { "DocumentExportDefinition\\": "." }
+	}
 }
