@@ -10,7 +10,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=7.0",
-		"jms/serializer": "^3.0"
+		"jms/serializer": "1.8.*"
 	},
 	"autoload": {
 		"psr-0": { "DocumentExportDefinition\\": "." }
