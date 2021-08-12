@@ -14,7 +14,6 @@ class ImageDefinition extends AbstractEncodedDataDefinition
 	/**
 	 * @Serializer\Type("int")
 	 * @var int|null
-	 * @nu
 	 */
 	protected $height = null;
 
