@@ -69,7 +69,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	}
 
 	/**
-	 * @param int $mimeType
+	 * @param string $mimeType
 	 * @return $this
 	 */
 	public function setMimeType($mimeType)
@@ -79,7 +79,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	}
 
 	/**
-	 * @param int $extension
+	 * @param string $extension
 	 * @return $this
 	 */
 	public function setExtension($extension)
@@ -88,13 +88,16 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 		return $this;
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getExtension()
 	{
 		return $this->extension;
 	}
 
 	/**
-	 * @return int
+	 * @return string
 	 */
 	public function getMimeType()
 	{
