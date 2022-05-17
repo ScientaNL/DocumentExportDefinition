@@ -1,4 +1,5 @@
 <?php
+
 namespace DocumentExportDefinition\Section\Data;
 
 use DocumentExportDefinition\Section\AbstractDataDefinition;
@@ -9,32 +10,34 @@ class FormDefinition extends AbstractDataDefinition
 	/**
 	 * @Serializer\SerializedName("description")
 	 * @Serializer\Type("string")
+	 * @var string|null
 	 */
-	protected $description;
+	protected ?string $description = null;
 
 	/**
 	 * @Serializer\SerializedName("url")
 	 * @Serializer\Type("string")
+	 * @var string|null
 	 */
-	protected $url;
+	protected ?string $url = null;
 
-	public function getType()
+	public function getType(): string
 	{
 		return 'FormDefinition';
 	}
 
 	/**
-	 * @param mixed $description
-	 * @return FileDefinition
+	 * @param string $description
+	 * @return $this
 	 */
-	public function setDescription($description)
+	public function setDescription(string $description)
 	{
 		$this->description = $description;
 		return $this;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getDescription(): string
 	{
@@ -42,19 +45,19 @@ class FormDefinition extends AbstractDataDefinition
 	}
 
 	/**
-	 * @param mixed $url
-	 * @return FormDefinition
+	 * @param string $url
+	 * @return $this
 	 */
-	public function setUrl($url)
+	public function setUrl(string $url)
 	{
 		$this->url = $url;
 		return $this;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string|null
 	 */
-	public function getUrl(): string
+	public function getUrl(): ?string
 	{
 		return $this->url;
 	}

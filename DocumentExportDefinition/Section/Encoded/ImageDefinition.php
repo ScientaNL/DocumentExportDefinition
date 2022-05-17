@@ -1,4 +1,5 @@
 <?php
+
 namespace DocumentExportDefinition\Section\Encoded;
 
 use JMS\Serializer\Annotation as Serializer;
@@ -17,13 +18,13 @@ class ImageDefinition extends AbstractEncodedDataDefinition
 	 */
 	protected $height = null;
 
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("objectType")
-     * @Serializer\Type("string")
-     * @return string
-     */
-	public function getType()
+	/**
+	 * @Serializer\VirtualProperty
+	 * @Serializer\SerializedName("objectType")
+	 * @Serializer\Type("string")
+	 * @return string
+	 */
+	public function getType(): string
 	{
 		return 'ImageDefinition';
 	}

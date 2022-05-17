@@ -1,7 +1,10 @@
 <?php
+
 namespace DocumentExportDefinition\Exception;
 
-class InvalidArgumentException extends \InvalidArgumentException
+use InvalidArgumentException as RootInvalidArgumentException;
+
+class InvalidArgumentException extends RootInvalidArgumentException
 {
 	//
 }

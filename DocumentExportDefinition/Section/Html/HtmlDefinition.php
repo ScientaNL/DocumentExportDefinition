@@ -1,4 +1,5 @@
 <?php
+
 namespace DocumentExportDefinition\Section\Html;
 
 use DocumentExportDefinition\Section\AbstractDataDefinition;
@@ -11,21 +12,21 @@ class HtmlDefinition extends AbstractDataDefinition
 	 * @Serializer\Type("array<string,DocumentExportDefinition\Section\Html\HtmlImageDefinition>")
 	 * @var array
 	 */
-	protected $images = [];
+	protected array $images = [];
 
 	/**
 	 * @Serializer\SerializedName("useStrictStyles")
 	 * @Serializer\Type("boolean")
 	 */
-	protected $useStrictStyles = true;
+	protected bool $useStrictStyles = true;
 
-    /**
-     * @Serializer\VirtualProperty
-     * @Serializer\SerializedName("objectType")
-     * @Serializer\Type("string")
-     * @return string
-     */
-	public function getType()
+	/**
+	 * @Serializer\VirtualProperty
+	 * @Serializer\SerializedName("objectType")
+	 * @Serializer\Type("string")
+	 * @return string
+	 */
+	public function getType(): string
 	{
 		return 'HtmlDefinition';
 	}
@@ -34,7 +35,7 @@ class HtmlDefinition extends AbstractDataDefinition
 	 * @param HtmlImageDefinition $image
 	 * @return $this
 	 */
-	public function addImage(HtmlImageDefinition $image)
+	public function addImage(HtmlImageDefinition $image): self
 	{
 		$this->images[$image->getFileId()] = $image;
 		return $this;
@@ -43,25 +44,25 @@ class HtmlDefinition extends AbstractDataDefinition
 	/**
 	 * @return array
 	 */
-	public function getImages()
+	public function getImages(): array
 	{
 		return $this->images;
 	}
 
 	/**
-	 * @param $useStrictStyles
+	 * @param bool $useStrictStyles
 	 * @return $this
 	 */
-    public function setUseStrictStyles($useStrictStyles)
+	public function setUseStrictStyles(bool $useStrictStyles): self
 	{
 		$this->useStrictStyles = $useStrictStyles;
 		return $this;
 	}
 
-    /**
-     * @return bool
-     */
-    public function getUseStrictStyles()
+	/**
+	 * @return bool
+	 */
+	public function getUseStrictStyles(): bool
 	{
 		return $this->useStrictStyles;
 	}

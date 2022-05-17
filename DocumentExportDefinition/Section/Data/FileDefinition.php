@@ -10,32 +10,37 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	/**
 	 * @Serializer\SerializedName("fileSize")
 	 * @Serializer\Type("string")
+	 * @var string|null
 	 */
-	protected $fileSize;
+	protected ?string $fileSize = null;
 
 	/**
 	 * @Serializer\SerializedName("fileName")
 	 * @Serializer\Type("string")
+	 * @var string|null
 	 */
-	protected $fileName;
+	protected ?string $fileName = null;
 
 	/**
 	 * @Serializer\SerializedName("fileType")
 	 * @Serializer\Type("string")
+	 * @var string|null
 	 */
-	protected $fileType;
+	protected ?string $fileType = null;
 
 	/**
 	 * @Serializer\SerializedName("description")
 	 * @Serializer\Type("string")
+	 * @var string|null
 	 */
-	protected $description;
+	protected ?string $description = null;
 
 	/**
 	 * @Serializer\SerializedName("url")
 	 * @Serializer\Type("string")
+	 * @var string|null
 	 */
-	protected $url;
+	protected ?string $url = null;
 
 	/**
 	 * @Serializer\VirtualProperty
@@ -43,13 +48,13 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	 * @Serializer\Type("string")
 	 * @return string
 	 */
-	public function getType()
+	public function getType(): string
 	{
 		return 'FileDefinition';
 	}
 
 	/**
-	 * @return mixed
+	 * @return string|null
 	 */
 	public function getFileSize()
 	{
@@ -57,7 +62,7 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getFileName(): string
 	{
@@ -65,7 +70,7 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getFileType(): string
 	{
@@ -73,7 +78,7 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getDescription(): string
 	{
@@ -81,61 +86,60 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	}
 
 	/**
-	 * @param mixed $fileSize
+	 * @param string $fileSize
 	 * @return FileDefinition
 	 */
-	public function setFileSize($fileSize)
+	public function setFileSize(string $fileSize)
 	{
 		$this->fileSize = $fileSize;
 		return $this;
 	}
 
 	/**
-	 * @param mixed $fileName
+	 * @param string $fileName
 	 * @return FileDefinition
 	 */
-	public function setFileName($fileName)
+	public function setFileName(string $fileName)
 	{
 		$this->fileName = $fileName;
 		return $this;
 	}
 
 	/**
-	 * @param mixed $fileType
+	 * @param string $fileType
 	 * @return FileDefinition
 	 */
-	public function setFileType($fileType)
+	public function setFileType(string $fileType)
 	{
 		$this->fileType = $fileType;
 		return $this;
 	}
 
 	/**
-	 * @param mixed $description
+	 * @param string $description
 	 * @return FileDefinition
 	 */
-	public function setDescription($description)
+	public function setDescription(string $description)
 	{
 		$this->description = $description;
 		return $this;
 	}
 
 	/**
-	 * @param mixed $url
+	 * @param string $url
 	 * @return FileDefinition
 	 */
-	public function setUrl($url)
+	public function setUrl(string $url)
 	{
 		$this->url = $url;
 		return $this;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string
 	 */
 	public function getUrl(): string
 	{
-		return $this->url;
+		return (string)$this->url;
 	}
-
 }
