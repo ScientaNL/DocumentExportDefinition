@@ -6,22 +6,23 @@ use JMS\Serializer\Annotation as Serializer;
 
 class SectionDefinition
 {
-	const OPTION_ANCHOR = 'anchor';
-	const OPTION_ORIENTATION = 'orientation';
-	const OPTION_NEXT_SECTION_ORIENTATION = 'nextSectionOrientation';
+	public const OPTION_ANCHOR = 'anchor';
+	public const OPTION_ORIENTATION = 'orientation';
+	public const OPTION_NEXT_SECTION_ORIENTATION = 'nextSectionOrientation';
 
 	/**
 	 * @Serializer\SerializedName("variables")
 	 * @Serializer\Type("array<string, DocumentExportDefinition\Section\AbstractDataDefinition>")
+	 * @var array
 	 */
-	protected $variables;
+	protected array $variables = [];
 
 	/**
 	 * @Serializer\SerializedName("categoryTrail")
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
-	protected $categoryTrail;
+	protected array $categoryTrail = [];
 
 
 	/**
@@ -29,7 +30,7 @@ class SectionDefinition
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
-	protected $options = [
+	protected array $options = [
 		self::OPTION_ANCHOR => null,
 		self::OPTION_ORIENTATION => null,
 		self::OPTION_NEXT_SECTION_ORIENTATION => null
@@ -38,44 +39,15 @@ class SectionDefinition
 	/**
 	 * @Serializer\SerializedName("images")
 	 * @Serializer\Type("array<string>")
+	 * @var array
 	 */
-	protected $images;
-
+	protected array $images = [];
 
 	/**
-	 * AbstractSectionDefinition constructor.
-	 * @param null $title
-	 * @param null $contents
-	 */
-	public function __construct($title = null, $contents = null)
-	{
-		$this->title = $title;
-		$this->contents = $contents;
-	}
-
-	/**
-	 * @param string $title
+	 * @param array $variables
 	 * @return $this
 	 */
-	public function setTitle($title)
-	{
-		$this->title = $title;
-		return $this;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getTitle()
-	{
-		return $this->title;
-	}
-
-	/**
-	 * @param $variables
-	 * @return $this
-	 */
-	public function setVariables($variables)
+	public function setVariables(array $variables)
 	{
 		$this->variables = $variables;
 		return $this;
@@ -84,14 +56,14 @@ class SectionDefinition
 	/**
 	 * @return array
 	 */
-	public function getVariables()
+	public function getVariables(): array
 	{
 		return $this->variables;
 	}
 
 	/**
-	 * @param $option
-	 * @param $value
+	 * @param string $option
+	 * @param mixed $value
 	 * @return $this
 	 */
 	public function setOption($option, $value)
@@ -101,7 +73,7 @@ class SectionDefinition
 	}
 
 	/**
-	 * @param $option
+	 * @param string $option
 	 * @return bool|mixed
 	 */
 	public function getOption($option)
@@ -114,7 +86,7 @@ class SectionDefinition
 	}
 
 	/**
-	 * @return mixed
+	 * @return array
 	 */
 	public function getImages()
 	{
@@ -122,10 +94,10 @@ class SectionDefinition
 	}
 
 	/**
-	 * @param mixed $images
+	 * @param array $images
 	 * @return $this
 	 */
-	public function setImages($images)
+	public function setImages(array $images)
 	{
 		$this->images = $images;
 		return $this;
@@ -141,9 +113,9 @@ class SectionDefinition
 
 	/**
 	 * @param array $categoryTrail
-	 * @return SectionDefinition
+	 * @return $this
 	 */
-	public function setCategoryTrail(array $categoryTrail)
+	public function setCategoryTrail(array $categoryTrail): self
 	{
 		$this->categoryTrail = $categoryTrail;
 		return $this;

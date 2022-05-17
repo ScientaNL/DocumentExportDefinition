@@ -8,46 +8,46 @@ use DocumentExportDefinition\Exception\InvalidArgumentException;
 
 class DocumentDefinition
 {
-	const PROPERTY_TITLE = "title";
-	const PROPERTY_CREATOR = "creator";
-	const PROPERTY_KEYWORDS = "keywords";
-	const PROPERTY_DESCRIPTION = "description";
-	const PROPERTY_CATEGORY = "category";
-	const PROPERTY_CONTENT_STATUS = "contentStatus";
-	const PROPERTY_COMPANY = "company";
-	const PROPERTY_DATE = 'date';
-	const PROPERTY_LOCALE = "locale";
+	public const PROPERTY_TITLE = "title";
+	public const PROPERTY_CREATOR = "creator";
+	public const PROPERTY_KEYWORDS = "keywords";
+	public const PROPERTY_DESCRIPTION = "description";
+	public const PROPERTY_CATEGORY = "category";
+	public const PROPERTY_CONTENT_STATUS = "contentStatus";
+	public const PROPERTY_COMPANY = "company";
+	public const PROPERTY_DATE = 'date';
+	public const PROPERTY_LOCALE = "locale";
 
-	const PROPERTY_LOCALIZED_SIZE = 'localizedSize';
-	const PROPERTY_LOCALIZED_DESCRIPTION = 'localizedDescription';
-	const PROPERTY_LOCALIZED_TYPE = 'localizedType';
+	public const PROPERTY_LOCALIZED_SIZE = 'localizedSize';
+	public const PROPERTY_LOCALIZED_DESCRIPTION = 'localizedDescription';
+	public const PROPERTY_LOCALIZED_TYPE = 'localizedType';
 
-	const PROPERTY_LOCALIZED_RASCI_RESPONSIBLE = 'responsible';
-	const PROPERTY_LOCALIZED_RASCI_ACCOUNTABLE = 'accountable';
-	const PROPERTY_LOCALIZED_RASCI_SUPPORT = 'support';
-	const PROPERTY_LOCALIZED_RASCI_CONSULT = 'consult';
-	const PROPERTY_LOCALIZED_RASCI_INFORM = 'inform';
+	public const PROPERTY_LOCALIZED_RASCI_RESPONSIBLE = 'responsible';
+	public const PROPERTY_LOCALIZED_RASCI_ACCOUNTABLE = 'accountable';
+	public const PROPERTY_LOCALIZED_RASCI_SUPPORT = 'support';
+	public const PROPERTY_LOCALIZED_RASCI_CONSULT = 'consult';
+	public const PROPERTY_LOCALIZED_RASCI_INFORM = 'inform';
 
-	const OPTION_BASE_URL = 'baseUrl';
-	const OPTION_CONVERSION_TYPE = 'conversionType';
-	const OPTION_CATEGORIES_AS_FOLDERS = "categoriesAsFolders";
-	const OPTION_MERGE_CONTINUOUS = 'mergeContinuous';
-	const OPTION_TEMPLATE_VAR_SYMBOL = 'templateVarSymbol';
+	public const OPTION_BASE_URL = 'baseUrl';
+	public const OPTION_CONVERSION_TYPE = 'conversionType';
+	public const OPTION_CATEGORIES_AS_FOLDERS = "categoriesAsFolders";
+	public const OPTION_MERGE_CONTINUOUS = 'mergeContinuous';
+	public const OPTION_TEMPLATE_VAR_SYMBOL = 'templateVarSymbol';
 
-	const LANDSCAPE = 'landscape';
-	const PORTRAIT = 'portrait';
+	public const LANDSCAPE = 'landscape';
+	public const PORTRAIT = 'portrait';
 
 	/**
 	 * @Serializer\SerializedName("header")
 	 * @Serializer\Type("DocumentExportDefinition\Section\SectionDefinition")
-	 * @var SectionDefinition
+	 * @var SectionDefinition|null
 	 */
 	protected $header;
 
 	/**
 	 * @Serializer\SerializedName("footer")
 	 * @Serializer\Type("DocumentExportDefinition\Section\SectionDefinition")
-	 * @var SectionDefinition
+	 * @var SectionDefinition|null
 	 */
 	protected $footer;
 
@@ -62,6 +62,7 @@ class DocumentDefinition
 	 * @Serializer\Type("string")
 	 * @Serializer\SerializedName("templateDocx")
 	 * @Serializer\Accessor(getter="getEncodedTemplate",setter="setEncodedTemplate")
+	 * @var string|null
 	 */
 	protected $templateDocx;
 
@@ -107,14 +108,14 @@ class DocumentDefinition
 	 * @param SectionDefinition $section
 	 * @return $this
 	 */
-	public function setHeader(SectionDefinition $section)
+	public function setHeader(SectionDefinition $section): self
 	{
 		$this->header = $section;
 		return $this;
 	}
 
 	/**
-	 * @return SectionDefinition
+	 * @return SectionDefinition|null
 	 */
 	public function getHeader()
 	{
@@ -125,14 +126,14 @@ class DocumentDefinition
 	 * @param SectionDefinition $section
 	 * @return $this
 	 */
-	public function setFooter(SectionDefinition $section)
+	public function setFooter(SectionDefinition $section): self
 	{
 		$this->footer = $section;
 		return $this;
 	}
 
 	/**
-	 * @return SectionDefinition
+	 * @return SectionDefinition|null
 	 */
 	public function getFooter()
 	{
@@ -160,7 +161,7 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param $sectionType
+	 * @param class-string $sectionType
 	 * @return bool
 	 */
 	public function hasSection($sectionType)
@@ -183,11 +184,11 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param $option
-	 * @param $value
+	 * @param string $option
+	 * @param mixed $value
 	 * @return $this
 	 */
-	public function setOption($option, $value)
+	public function setOption(string $option, $value): self
 	{
 		if (array_key_exists($option, $this->options) === false) {
 			throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
@@ -198,10 +199,10 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param $option
+	 * @param string $option
 	 * @return mixed
 	 */
-	public function getOption($option)
+	public function getOption(string $option)
 	{
 		if (array_key_exists($option, $this->options) === false) {
 			throw new InvalidArgumentException(sprintf("Invalid option %s specified", $option));
@@ -211,11 +212,11 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param $property
-	 * @param $value
+	 * @param string $property
+	 * @param mixed $value
 	 * @return $this
 	 */
-	public function setDocumentProperty($property, $value)
+	public function setDocumentProperty(string $property, $value): self
 	{
 		if (array_key_exists($property, $this->documentProperties) === false) {
 			throw new InvalidArgumentException(sprintf("Invalid property %s specified", $property));
@@ -226,10 +227,10 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param $property
+	 * @param string $property
 	 * @return mixed
 	 */
-	public function getDocumentProperty($property)
+	public function getDocumentProperty(string $property)
 	{
 		if (array_key_exists($property, $this->documentProperties) === false) {
 			throw new InvalidArgumentException(sprintf("Invalid property %s specified", $property));
@@ -239,17 +240,17 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param $templateFile
+	 * @param string $templateFile
 	 * @return $this
 	 */
-	public function setTemplateDocx($templateFile)
+	public function setTemplateDocx(string $templateFile): self
 	{
 		$this->templateDocx = $templateFile;
 		return $this;
 	}
 
 	/**
-	 * @return mixed
+	 * @return string|null
 	 */
 	public function getTemplateDocx()
 	{
@@ -257,10 +258,10 @@ class DocumentDefinition
 	}
 
 	/**
-	 * @param $templateFile
+	 * @param string $templateFile
 	 * @return $this
 	 */
-	public function setEncodedTemplate($templateFile)
+	public function setEncodedTemplate(string $templateFile): self
 	{
 		$this->templateDocx = base64_decode($templateFile);
 		return $this;
@@ -271,7 +272,6 @@ class DocumentDefinition
 	 */
 	public function getEncodedTemplate()
 	{
-		return base64_encode($this->templateDocx);
+		return base64_encode((string)$this->templateDocx);
 	}
-
 }

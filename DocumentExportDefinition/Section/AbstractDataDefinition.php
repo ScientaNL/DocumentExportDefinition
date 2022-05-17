@@ -5,6 +5,7 @@ namespace DocumentExportDefinition\Section;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
+ * @template V as string|array|null
  * @Serializer\Discriminator(field = "objectType", map = {
  *    "String": "DocumentExportDefinition\Section\Data\StringDefinition",
  *    "File": "DocumentExportDefinition\Section\Data\FileDefinition",
@@ -24,25 +25,18 @@ use JMS\Serializer\Annotation as Serializer;
 abstract class AbstractDataDefinition
 {
 	/**
+	 * @var V
 	 * @Serializer\SerializedName("value")
 	 * @Serializer\Type("string")
-	 * @var string
 	 */
 	protected $value;
 
 	/**
+	 * @var string|null
 	 * @Serializer\SerializedName("title")
 	 * @Serializer\Type("string")
-	 * @var string
 	 */
 	protected $title;
-
-	/**
-	 * AbstractDataDefinition constructor.
-	 */
-	public function __construct()
-	{
-	}
 
 	/**
 	 * @Serializer\VirtualProperty
@@ -50,10 +44,10 @@ abstract class AbstractDataDefinition
 	 * @Serializer\Type("string")
 	 * @return string
 	 */
-	abstract public function getType();
+	abstract public function getType(): string;
 
 	/**
-	 * @return string|array
+	 * @return V
 	 */
 	public function getValue()
 	{
@@ -61,7 +55,7 @@ abstract class AbstractDataDefinition
 	}
 
 	/**
-	 * @param string $value
+	 * @param V $value
 	 * @return $this
 	 */
 	public function setValue($value)
@@ -71,7 +65,7 @@ abstract class AbstractDataDefinition
 	}
 
 	/**
-	 * @return string
+	 * @return string|null
 	 */
 	public function getTitle()
 	{
@@ -82,7 +76,7 @@ abstract class AbstractDataDefinition
 	 * @param string $title
 	 * @return $this
 	 */
-	public function setTitle($title)
+	public function setTitle(string $title)
 	{
 		$this->title = $title;
 		return $this;

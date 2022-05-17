@@ -5,6 +5,9 @@ namespace DocumentExportDefinition\Section\Data;
 use DocumentExportDefinition\Section\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
+/**
+ * @extends AbstractDataDefinition<array>
+ */
 class BadgeCategoryTrailDefinition extends AbstractDataDefinition
 {
 	/**
@@ -12,7 +15,7 @@ class BadgeCategoryTrailDefinition extends AbstractDataDefinition
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
-	protected $value;
+	protected $value = [];
 
 	/**
 	 * @Serializer\VirtualProperty
@@ -20,7 +23,7 @@ class BadgeCategoryTrailDefinition extends AbstractDataDefinition
 	 * @Serializer\Type("string")
 	 * @return string
 	 */
-	public function getType()
+	public function getType(): string
 	{
 		return 'BadgeCategoryTrailDefinition';
 	}
