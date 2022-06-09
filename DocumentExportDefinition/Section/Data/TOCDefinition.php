@@ -6,7 +6,7 @@ use DocumentExportDefinition\Section\AbstractDataDefinition;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
- * @extends AbstractDataDefinition<array>
+ * @psalm-extends AbstractDataDefinition<array>
  */
 class TOCDefinition extends AbstractDataDefinition
 {

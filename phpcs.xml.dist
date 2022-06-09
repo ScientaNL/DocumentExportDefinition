@@ -16,7 +16,8 @@
 	<file>DocumentExportDefinition</file>
 
 	<!-- Run against the PHPCompatibility ruleset -->
-	<!--<rule ref="PHPCompatibility"/>-->
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="7.1-"/>
 
 	<!-- Include PSR12 rules -->
 	<rule ref="PSR12">

@@ -12,13 +12,14 @@ class HtmlDefinition extends AbstractDataDefinition
 	 * @Serializer\Type("array<string,DocumentExportDefinition\Section\Html\HtmlImageDefinition>")
 	 * @var array
 	 */
-	protected array $images = [];
+	protected $images = [];
 
 	/**
+	 * @var bool
 	 * @Serializer\SerializedName("useStrictStyles")
 	 * @Serializer\Type("boolean")
 	 */
-	protected bool $useStrictStyles = true;
+	protected $useStrictStyles = true;
 
 	/**
 	 * @Serializer\VirtualProperty
