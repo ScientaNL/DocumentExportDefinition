@@ -12,35 +12,35 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	 * @Serializer\Type("string")
 	 * @var string|null
 	 */
-	protected ?string $fileSize = null;
+	protected $fileSize = null;
 
 	/**
 	 * @Serializer\SerializedName("fileName")
 	 * @Serializer\Type("string")
 	 * @var string|null
 	 */
-	protected ?string $fileName = null;
+	protected $fileName = null;
 
 	/**
 	 * @Serializer\SerializedName("fileType")
 	 * @Serializer\Type("string")
 	 * @var string|null
 	 */
-	protected ?string $fileType = null;
+	protected $fileType = null;
 
 	/**
 	 * @Serializer\SerializedName("description")
 	 * @Serializer\Type("string")
 	 * @var string|null
 	 */
-	protected ?string $description = null;
+	protected $description = null;
 
 	/**
 	 * @Serializer\SerializedName("url")
 	 * @Serializer\Type("string")
 	 * @var string|null
 	 */
-	protected ?string $url = null;
+	protected $url = null;
 
 	/**
 	 * @Serializer\VirtualProperty

@@ -12,14 +12,14 @@ class FormDefinition extends AbstractDataDefinition
 	 * @Serializer\Type("string")
 	 * @var string|null
 	 */
-	protected ?string $description = null;
+	protected $description = null;
 
 	/**
 	 * @Serializer\SerializedName("url")
 	 * @Serializer\Type("string")
 	 * @var string|null
 	 */
-	protected ?string $url = null;
+	protected $url = null;
 
 	public function getType(): string
 	{
@@ -27,10 +27,10 @@ class FormDefinition extends AbstractDataDefinition
 	}
 
 	/**
-	 * @param string $description
+	 * @param string|null $description
 	 * @return $this
 	 */
-	public function setDescription(string $description)
+	public function setDescription(?string $description): FormDefinition
 	{
 		$this->description = $description;
 		return $this;

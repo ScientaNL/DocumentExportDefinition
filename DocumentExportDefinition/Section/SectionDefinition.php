@@ -15,14 +15,14 @@ class SectionDefinition
 	 * @Serializer\Type("array<string, DocumentExportDefinition\Section\AbstractDataDefinition>")
 	 * @var array
 	 */
-	protected array $variables = [];
+	protected $variables = [];
 
 	/**
 	 * @Serializer\SerializedName("categoryTrail")
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
-	protected array $categoryTrail = [];
+	protected $categoryTrail = [];
 
 
 	/**
@@ -30,7 +30,7 @@ class SectionDefinition
 	 * @Serializer\Type("array")
 	 * @var array
 	 */
-	protected array $options = [
+	protected $options = [
 		self::OPTION_ANCHOR => null,
 		self::OPTION_ORIENTATION => null,
 		self::OPTION_NEXT_SECTION_ORIENTATION => null
@@ -41,7 +41,7 @@ class SectionDefinition
 	 * @Serializer\Type("array<string>")
 	 * @var array
 	 */
-	protected array $images = [];
+	protected $images = [];
 
 	/**
 	 * @param array $variables

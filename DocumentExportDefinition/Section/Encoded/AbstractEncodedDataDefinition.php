@@ -16,7 +16,7 @@ abstract class AbstractEncodedDataDefinition extends AbstractDataDefinition
 	 * @Serializer\SerializedName("fileId")
 	 * @Serializer\Type("string")
 	 */
-	protected string $fileId;
+	protected $fileId;
 
 	/**
 	 * @var string|null
