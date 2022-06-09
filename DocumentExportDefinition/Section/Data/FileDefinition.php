@@ -116,10 +116,10 @@ class FileDefinition extends AbstractEncodedDataDefinition
 	}
 
 	/**
-	 * @param string $description
+	 * @param string|null $description
 	 * @return FileDefinition
 	 */
-	public function setDescription(string $description)
+	public function setDescription(?string $description): FileDefinition
 	{
 		$this->description = $description;
 		return $this;
