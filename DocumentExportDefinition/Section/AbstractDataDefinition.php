@@ -5,7 +5,7 @@ namespace DocumentExportDefinition\Section;
 use JMS\Serializer\Annotation as Serializer;
 
 /**
- * @template V as string|array|null
+ * @psalm-template V as string|array|null
  * @Serializer\Discriminator(field = "objectType", map = {
  *    "String": "DocumentExportDefinition\Section\Data\StringDefinition",
  *    "File": "DocumentExportDefinition\Section\Data\FileDefinition",
